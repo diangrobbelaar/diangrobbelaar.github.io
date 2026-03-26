@@ -296,19 +296,20 @@
     transform: translateY(-2px);
   }
   
-  /* Pulse Animation for CTAs */
+  /* Pulse Animation for CTAs - Enhanced */
   @keyframes pulse-glow {
     0%, 100% {
-      box-shadow: 0 0 15px rgba(250, 0, 255, 0.2);
+      box-shadow: 0 0 20px rgba(250, 0, 255, 0.3), 0 0 40px rgba(0, 247, 255, 0.1);
     }
     50% {
-      box-shadow: 0 0 30px rgba(250, 0, 255, 0.4),
-                  0 0 50px rgba(250, 0, 255, 0.2);
+      box-shadow: 0 0 40px rgba(250, 0, 255, 0.5),
+                  0 0 70px rgba(250, 0, 255, 0.3),
+                  0 0 100px rgba(0, 247, 255, 0.15);
     }
   }
   
   .pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+    animation: pulse-glow 2.5s ease-in-out infinite;
   }
   
   /* Smooth Fade In Animation */
@@ -469,4 +470,28 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #FA00FF 0%, #00F7FF 100%);
+  box-shadow: 0 0 10px rgba(250, 0, 255, 0.5);
+}
+
+/* Premium Body Background */
+body {
+  background: radial-gradient(ellipse at 20% 50%, rgba(0, 247, 255, 0.02) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 80%, rgba(250, 0, 255, 0.02) 0%, transparent 50%),
+              #000000;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 }

@@ -373,19 +373,7 @@ export default function Home() {
               </svg>
             </a>
 
-            {/* TikTok */}
-            <a
-              href="https://www.tiktok.com/@d_grobbelaar_?_r=1&_t=ZS-951E7C7pSV8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon group float-animation"
-              style={{ animationDelay: '0.2s' }}
-              title="TikTok"
-            >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19.498 3.75c1.382 0 2.5-1.118 2.5-2.5s-1.118-2.5-2.5-2.5-2.5 1.118-2.5 2.5 1.118 2.5 2.5 2.5zm-8.5 1.75c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm8.5-13.5c0 1.105.895 2 2 2s2-.895 2-2-.895-2-2-2-2 .895-2 2zm-12 22.5c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z" />
-              </svg>
-            </a>
+
 
             {/* X (Twitter) */}
             <a
