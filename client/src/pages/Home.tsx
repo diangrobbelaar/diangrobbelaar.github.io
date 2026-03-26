@@ -182,25 +182,9 @@ export default function Home() {
       {/* Glory and Grace Church Section */}
       <section id="church" className="py-20 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left: 4K Dog Image */}
-            <div className="fade-in-up order-2 md:order-1 flex justify-center">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-magenta-500 to-lime-500 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-magenta-500 via-lime-500 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-xl"></div>
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_casual_4k-kiFuBojZjqMMy6qaRuz74j.webp"
-                  alt="Dian with dog on shoulder"
-                  className="relative w-72 h-96 md:w-96 md:h-full object-cover rounded-2xl drop-shadow-2xl transition-transform hover:scale-105 float-animation"
-                  style={{
-                    filter: 'drop-shadow(0 0 30px rgba(250, 0, 255, 0.5))',
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Right: Church Info - Centered */}
-            <div className="slide-in-right order-1 md:order-2 space-y-8 flex flex-col justify-center">
+          <div className="flex justify-center">
+            {/* Church Info - Centered */}
+            <div className="slide-in-right space-y-8 flex flex-col justify-center max-w-2xl">
               <div>
                 <h2 className="text-5xl md:text-6xl font-bold mb-4" style={{ color: '#FA00FF', textShadow: '0 0 10px rgba(250, 0, 255, 0.5), 0 0 20px rgba(250, 0, 255, 0.3)' }}>
                   Glory and Grace
@@ -319,11 +303,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Premium Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-magenta-500 to-transparent opacity-50 shimmer-effect"></div>
-
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 md:px-8 relative overflow-hidden">
+      <section id="contact" className="py-8 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="gradient-text-magenta-lime">Contact the Team</span>
