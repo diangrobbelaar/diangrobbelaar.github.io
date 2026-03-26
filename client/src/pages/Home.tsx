@@ -190,7 +190,7 @@ export default function Home() {
                 <div className="absolute -inset-1 bg-gradient-to-r from-magenta-500 via-lime-500 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-xl"></div>
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_casual_4k-kiFuBojZjqMMy6qaRuz74j.webp"
-                  alt="Dian with dog"
+                  alt="Dian Grobbelaar with dog on shoulder"
                   className="relative w-full h-full object-cover image-premium-quality"
                 />
               </div>
