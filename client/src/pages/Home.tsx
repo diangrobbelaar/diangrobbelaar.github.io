@@ -7,10 +7,12 @@ import { Mail, Instagram, Facebook, Music, Zap, Heart, Users, MessageCircle } fr
  * Colors: Black (#000000), White (#FFFFFF), Cyan (#00F7FF), Magenta (#FA00FF), Lime (#00FF49)
  * Typography: Fredoka font family throughout
  * Theme: Cyberpunk meets Spirituality with electric neon accents
+ * Enhanced with premium creative design features and visual excellence
  */
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,12 +22,27 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
+      {/* Animated Background Orbs */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl opacity-5 float-animation"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-magenta-500 rounded-full mix-blend-screen filter blur-3xl opacity-5 float-animation" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-lime-500 rounded-full mix-blend-screen filter blur-3xl opacity-3 float-animation" style={{ animationDelay: '2s' }}></div>
+      </div>
+
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-black/90 backdrop-blur-md border-b border-cyan-500/20' : 'bg-transparent'
+          isScrolled ? 'bg-black/95 backdrop-blur-xl border-b border-cyan-500/20 shadow-2xl' : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-center items-center">
@@ -35,21 +52,17 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-72 h-72 bg-magenta-500 rounded-full mix-blend-screen filter blur-3xl"></div>
-        </div>
-
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left: Image with Neon Border */}
+            {/* Left: Image with Premium Effects */}
             <div className="fade-in-up">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-magenta-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-magenta-500 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-magenta-500 to-lime-500 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-xl"></div>
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_formal_a961f443.jpg"
                   alt="Dian Grobbelaar"
-                  className="relative w-full h-auto rounded-2xl border-2 border-cyan-500/50 shadow-2xl object-cover"
+                  className="relative w-full h-auto rounded-2xl border-2 border-cyan-500/50 shadow-2xl object-cover image-premium-quality"
                 />
               </div>
             </div>
@@ -57,12 +70,12 @@ export default function Home() {
             {/* Right: Hero Text */}
             <div className="slide-in-right space-y-8">
               <div className="text-center md:text-left">
-                <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                   <span className="neon-glow-cyan">DIAN</span>
                   <br />
                   <span className="neon-glow-magenta">GROBBELAAR</span>
                 </h1>
-                <p className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-magenta-400 to-lime-400 bg-clip-text text-transparent animate-pulse">
+                <p className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-magenta-400 to-lime-400 bg-clip-text text-transparent animate-pulse">
                   Prophet of God
                 </p>
               </div>
@@ -76,7 +89,7 @@ export default function Home() {
                   href="https://www.paypal.com/ncp/payment/6NG4Q34ACBTCG"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 text-center pulse-glow"
+                  className="px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 text-center pulse-glow transform hover:scale-105"
                   style={{
                     background: '#00F7FF',
                     color: '#000000',
@@ -84,11 +97,9 @@ export default function Home() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.boxShadow = '0 0 35px rgba(0, 247, 255, 0.6), 0 0 60px rgba(0, 247, 255, 0.3)';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.boxShadow = '0 0 25px rgba(0, 247, 255, 0.4), 0 0 40px rgba(0, 247, 255, 0.2)';
-                    e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
                   Give to the Church
@@ -97,7 +108,7 @@ export default function Home() {
                   href="https://whatsapp.com/channel/0029VbBpoyx05MUhjSNxvS17"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 text-center"
+                  className="px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 text-center transform hover:scale-105"
                   style={{
                     background: '#FA00FF',
                     color: '#000000',
@@ -105,11 +116,9 @@ export default function Home() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.boxShadow = '0 0 35px rgba(250, 0, 255, 0.6), 0 0 60px rgba(250, 0, 255, 0.3)';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.boxShadow = '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)';
-                    e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
                   Join WhatsApp Channel
@@ -120,19 +129,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
+      {/* Premium Divider with Shimmer */}
+      <div className="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Three Roles Section */}
       <section id="roles" className="py-20 px-4 md:px-8 relative">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            <span className="gradient-text-cyan-magenta">Divine Calling</span>
+            <span className="gradient-text-cyan-magenta">Divine Purpose</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Prophet Card */}
-            <div className="card-premium group">
+            <div className="card-premium group float-animation">
               <div className="mb-6 p-4 bg-cyan-500/10 rounded-lg w-fit group-hover:bg-cyan-500/20 transition-all">
                 <Zap className="w-8 h-8 text-cyan-400" />
               </div>
@@ -143,7 +152,7 @@ export default function Home() {
             </div>
 
             {/* Musician Card */}
-            <div className="card-premium group">
+            <div className="card-premium group float-animation" style={{ animationDelay: '0.5s' }}>
               <div className="mb-6 p-4 bg-magenta-500/10 rounded-lg w-fit group-hover:bg-magenta-500/20 transition-all">
                 <Music className="w-8 h-8 text-magenta-400" />
               </div>
@@ -154,7 +163,7 @@ export default function Home() {
             </div>
 
             {/* MMA Artist Card */}
-            <div className="card-premium group">
+            <div className="card-premium group float-animation" style={{ animationDelay: '1s' }}>
               <div className="mb-6 p-4 bg-lime-500/10 rounded-lg w-fit group-hover:bg-lime-500/20 transition-all">
                 <Heart className="w-8 h-8 text-lime-400" />
               </div>
@@ -167,25 +176,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-magenta-500 to-transparent opacity-50"></div>
+      {/* Premium Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-magenta-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Glory and Grace Church Section */}
       <section id="church" className="py-20 px-4 md:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-lime-500 rounded-full mix-blend-screen filter blur-3xl"></div>
-        </div>
-
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left: Enhanced Photo */}
+            {/* Left: Premium Enhanced Photo */}
             <div className="fade-in-up order-2 md:order-1">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-magenta-500 to-lime-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-magenta-500 to-lime-500 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-magenta-500 via-lime-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-xl"></div>
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_casual_enhanced-V5CZXDe6nDRCbQgXJ462vi.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_casual_f6a25b91.jpg"
                   alt="Dian with dog"
-                  className="relative w-full h-auto rounded-2xl border-2 border-magenta-500/50 shadow-2xl object-cover"
+                  className="relative w-full h-auto rounded-2xl border-2 border-magenta-500/50 shadow-2xl object-cover image-premium-quality"
                 />
               </div>
             </div>
@@ -205,22 +211,22 @@ export default function Home() {
               </p>
 
               <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <Users className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-1" />
+                <div className="flex items-start gap-4 group cursor-pointer">
+                  <Users className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" />
                   <div>
                     <h4 className="font-bold text-white mb-1">Community-Driven</h4>
                     <p className="text-gray-300">Building a strong family of believers united in faith and purpose</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <Heart className="w-6 h-6 text-magenta-400 flex-shrink-0 mt-1" />
+                <div className="flex items-start gap-4 group cursor-pointer">
+                  <Heart className="w-6 h-6 text-magenta-400 flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" />
                   <div>
                     <h4 className="font-bold text-white mb-1">Spirit-Led</h4>
                     <p className="text-gray-300">Guided by the Holy Spirit in all our teachings and actions</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <Zap className="w-6 h-6 text-lime-400 flex-shrink-0 mt-1" />
+                <div className="flex items-start gap-4 group cursor-pointer">
+                  <Zap className="w-6 h-6 text-lime-400 flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" />
                   <div>
                     <h4 className="font-bold text-white mb-1">Transformative</h4>
                     <p className="text-gray-300">Empowering believers to live their divine purpose with power</p>
@@ -232,7 +238,7 @@ export default function Home() {
                 href="https://www.paypal.com/ncp/payment/6NG4Q34ACBTCG"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 pulse-glow"
+                className="inline-block px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 pulse-glow transform hover:scale-105"
                 style={{
                   background: '#FA00FF',
                   color: '#000000',
@@ -240,11 +246,9 @@ export default function Home() {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = '0 0 35px rgba(250, 0, 255, 0.6), 0 0 60px rgba(250, 0, 255, 0.3)';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.boxShadow = '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)';
-                  e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
                 Support Our Mission
@@ -254,13 +258,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-lime-500 to-transparent opacity-50"></div>
+      {/* Premium Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-lime-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* WhatsApp Section */}
       <section className="py-20 px-4 md:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <MessageCircle className="w-16 h-16 mx-auto mb-6 text-cyan-400" />
+          <div className="float-animation mb-6">
+            <MessageCircle className="w-16 h-16 mx-auto text-cyan-400" />
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="neon-glow-cyan">Join the Church</span>
           </h2>
@@ -271,7 +277,7 @@ export default function Home() {
             href="https://whatsapp.com/channel/0029VbBpoyx05MUhjSNxvS17"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 pulse-glow"
+            className="inline-block px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 pulse-glow transform hover:scale-105"
             style={{
               background: '#FA00FF',
               color: '#000000',
@@ -279,11 +285,9 @@ export default function Home() {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.boxShadow = '0 0 35px rgba(250, 0, 255, 0.6), 0 0 60px rgba(250, 0, 255, 0.3)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.boxShadow = '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)';
-              e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
             Join Now on WhatsApp
@@ -291,21 +295,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
+      {/* Premium Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Prophet Dian Logo Section */}
       <section className="py-20 px-4 md:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl"></div>
-        </div>
-
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <div className="mb-8 flex justify-center">
+          <div className="mb-8 flex justify-center float-animation">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/prophet_dian_logo_f8fa91a9.png"
               alt="Prophet Dian Logo"
-              className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl"
+              className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl transition-transform hover:scale-110"
               style={{
                 filter: 'drop-shadow(0 0 20px rgba(0, 247, 255, 0.4))',
               }}
@@ -316,15 +316,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-magenta-500 to-transparent opacity-50"></div>
+      {/* Premium Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-magenta-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 md:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-magenta-500 rounded-full mix-blend-screen filter blur-3xl"></div>
-        </div>
-
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="gradient-text-magenta-lime">Contact the Team</span>
@@ -335,7 +331,7 @@ export default function Home() {
 
           <a
             href="mailto:realdiangrobbelaar@gmail.com"
-            className="inline-flex items-center gap-3 px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 pulse-glow"
+            className="inline-flex items-center gap-3 px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 pulse-glow transform hover:scale-105"
             style={{
               background: '#00F7FF',
               color: '#000000',
@@ -343,11 +339,9 @@ export default function Home() {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.boxShadow = '0 0 35px rgba(0, 247, 255, 0.6), 0 0 60px rgba(0, 247, 255, 0.3)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.boxShadow = '0 0 25px rgba(0, 247, 255, 0.4), 0 0 40px rgba(0, 247, 255, 0.2)';
-              e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
             <Mail className="w-6 h-6" />
@@ -356,8 +350,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-magenta-500 to-transparent opacity-50"></div>
+      {/* Premium Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-magenta-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Social Links Footer */}
       <footer className="py-20 px-4 md:px-8 relative">
@@ -373,7 +367,7 @@ export default function Home() {
               href="https://www.instagram.com/d_grobbelaar_?igsh=MWNzMml1bjlqZDA4dA=="
               target="_blank"
               rel="noopener noreferrer"
-              className="social-icon group"
+              className="social-icon group float-animation"
               title="Instagram"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -386,7 +380,8 @@ export default function Home() {
               href="https://www.facebook.com/share/17oJR2oB8A/"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-icon group"
+              className="social-icon group float-animation"
+              style={{ animationDelay: '0.1s' }}
               title="Facebook"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -399,7 +394,8 @@ export default function Home() {
               href="https://www.tiktok.com/@d_grobbelaar_?_r=1&_t=ZS-951E7C7pSV8"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-icon group"
+              className="social-icon group float-animation"
+              style={{ animationDelay: '0.2s' }}
               title="TikTok"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -412,7 +408,8 @@ export default function Home() {
               href="https://x.com/D_Grobbelaar"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-icon group"
+              className="social-icon group float-animation"
+              style={{ animationDelay: '0.3s' }}
               title="X"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -425,7 +422,8 @@ export default function Home() {
               href="https://www.youtube.com/@d_grobbelaar_"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-icon group"
+              className="social-icon group float-animation"
+              style={{ animationDelay: '0.4s' }}
               title="YouTube"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

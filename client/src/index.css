@@ -368,6 +368,46 @@
     transform: translateY(-5px);
   }
   
+  /* Advanced Floating Animation */
+  @keyframes float-up {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .float-animation {
+    animation: float-up 3s ease-in-out infinite;
+  }
+  
+  /* Shimmer Effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .shimmer-effect {
+    background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.1), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+  }
+  
+  /* Premium Image Enhancement */
+  .image-premium-quality {
+    filter: contrast(1.1) brightness(1.05) saturate(1.15) drop-shadow(0 0 30px rgba(0, 247, 255, 0.2));
+    transition: filter 0.3s ease;
+  }
+  
+  .image-premium-quality:hover {
+    filter: contrast(1.15) brightness(1.1) saturate(1.2) drop-shadow(0 0 40px rgba(0, 247, 255, 0.3));
+  }
+  
   /* Social Icon Styles */
   .social-icon {
     @apply w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300;
