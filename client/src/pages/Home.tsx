@@ -28,22 +28,8 @@ export default function Home() {
           isScrolled ? 'bg-black/90 backdrop-blur-md border-b border-cyan-500/20' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold neon-glow-cyan">DIAN</div>
-          <div className="hidden md:flex gap-8">
-            <a href="#about" className="hover:text-cyan-400 transition-colors">
-              About
-            </a>
-            <a href="#roles" className="hover:text-cyan-400 transition-colors">
-              Roles
-            </a>
-            <a href="#church" className="hover:text-cyan-400 transition-colors">
-              Church
-            </a>
-            <a href="#contact" className="hover:text-cyan-400 transition-colors">
-              Contact
-            </a>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-center items-center">
+          <div className="text-3xl font-bold neon-glow-cyan tracking-wider">PROPHET DIAN</div>
         </div>
       </nav>
 
@@ -70,14 +56,15 @@ export default function Home() {
 
             {/* Right: Hero Text */}
             <div className="slide-in-right space-y-8">
-              <div>
-                <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
+              <div className="text-center md:text-left">
+                <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
                   <span className="neon-glow-cyan">DIAN</span>
                   <br />
                   <span className="neon-glow-magenta">GROBBELAAR</span>
                 </h1>
-                <p className="text-xl text-gray-300 mb-2">Prophet of God</p>
-                <p className="text-lg text-cyan-400">Musician • MMA Artist • Church Founder</p>
+                <p className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-magenta-400 to-lime-400 bg-clip-text text-transparent animate-pulse">
+                  Prophet of God
+                </p>
               </div>
 
               <p className="text-lg leading-relaxed text-gray-200 max-w-lg">
@@ -89,15 +76,41 @@ export default function Home() {
                   href="https://www.paypal.com/ncp/payment/6NG4Q34ACBTCG"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-neon-cyan text-center pulse-glow"
+                  className="px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 text-center pulse-glow"
+                  style={{
+                    background: '#00F7FF',
+                    color: '#000000',
+                    boxShadow: '0 0 25px rgba(0, 247, 255, 0.4), 0 0 40px rgba(0, 247, 255, 0.2)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 0 35px rgba(0, 247, 255, 0.6), 0 0 60px rgba(0, 247, 255, 0.3)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 0 25px rgba(0, 247, 255, 0.4), 0 0 40px rgba(0, 247, 255, 0.2)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
                 >
-                  💝 Give to the Church
+                  Give to the Church
                 </a>
                 <a
                   href="https://whatsapp.com/channel/0029VbBpoyx05MUhjSNxvS17"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-neon-magenta text-center"
+                  className="px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 text-center"
+                  style={{
+                    background: '#FA00FF',
+                    color: '#000000',
+                    boxShadow: '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 0 35px rgba(250, 0, 255, 0.6), 0 0 60px rgba(250, 0, 255, 0.3)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
                 >
                   Join WhatsApp Channel
                 </a>
@@ -115,8 +128,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             <span className="gradient-text-cyan-magenta">Divine Calling</span>
-            <br />
-            <span className="text-white">Multiple Talents, One Purpose</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -167,12 +178,12 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left: Casual Photo */}
+            {/* Left: Enhanced Photo */}
             <div className="fade-in-up order-2 md:order-1">
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-magenta-500 to-lime-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_casual_f6a25b91.jpg"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_casual_enhanced-V5CZXDe6nDRCbQgXJ462vi.webp"
                   alt="Dian with dog"
                   className="relative w-full h-auto rounded-2xl border-2 border-magenta-500/50 shadow-2xl object-cover"
                 />
@@ -182,8 +193,8 @@ export default function Home() {
             {/* Right: Church Info */}
             <div className="slide-in-right order-1 md:order-2 space-y-8">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  <span className="neon-glow-lime">Glory and Grace</span>
+                <h2 className="text-5xl md:text-6xl font-bold mb-4" style={{ color: '#FA00FF', textShadow: '0 0 10px rgba(250, 0, 255, 0.5), 0 0 20px rgba(250, 0, 255, 0.3)' }}>
+                  Glory and Grace
                   <br />
                   <span className="text-white">Church</span>
                 </h2>
@@ -221,9 +232,22 @@ export default function Home() {
                 href="https://www.paypal.com/ncp/payment/6NG4Q34ACBTCG"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-neon-lime inline-block pulse-glow"
+                className="inline-block px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 pulse-glow"
+                style={{
+                  background: '#FA00FF',
+                  color: '#000000',
+                  boxShadow: '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 0 35px rgba(250, 0, 255, 0.6), 0 0 60px rgba(250, 0, 255, 0.3)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
               >
-                💝 Support Our Mission
+                Support Our Mission
               </a>
             </div>
           </div>
@@ -238,7 +262,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <MessageCircle className="w-16 h-16 mx-auto mb-6 text-cyan-400" />
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="neon-glow-cyan">Join the Community</span>
+            <span className="neon-glow-cyan">Join the Church</span>
           </h2>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             Stay connected with daily inspirations, prayer requests, and updates from Glory and Grace Church. Join our WhatsApp channel for exclusive content and community engagement.
@@ -247,15 +271,53 @@ export default function Home() {
             href="https://whatsapp.com/channel/0029VbBpoyx05MUhjSNxvS17"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-neon-magenta inline-block pulse-glow"
+            className="inline-block px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 pulse-glow"
+            style={{
+              background: '#FA00FF',
+              color: '#000000',
+              boxShadow: '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = '0 0 35px rgba(250, 0, 255, 0.6), 0 0 60px rgba(250, 0, 255, 0.3)';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
           >
-            ✨ Join Now on WhatsApp
+            Join Now on WhatsApp
           </a>
         </div>
       </section>
 
       {/* Divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50"></div>
+
+      {/* Prophet Dian Logo Section */}
+      <section className="py-20 px-4 md:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <div className="mb-8 flex justify-center">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/prophet_dian_logo_f8fa91a9.png"
+              alt="Prophet Dian Logo"
+              className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl"
+              style={{
+                filter: 'drop-shadow(0 0 20px rgba(0, 247, 255, 0.4))',
+              }}
+            />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-3 neon-glow-cyan">PROPHET DIAN</h2>
+          <p className="text-2xl md:text-3xl font-bold mb-8 gradient-text-cyan-magenta">All Things Prophetic</p>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-magenta-500 to-transparent opacity-50"></div>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 md:px-8 relative overflow-hidden">
@@ -273,7 +335,20 @@ export default function Home() {
 
           <a
             href="mailto:realdiangrobbelaar@gmail.com"
-            className="btn-neon-cyan inline-flex items-center gap-3 pulse-glow"
+            className="inline-flex items-center gap-3 px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 pulse-glow"
+            style={{
+              background: '#00F7FF',
+              color: '#000000',
+              boxShadow: '0 0 25px rgba(0, 247, 255, 0.4), 0 0 40px rgba(0, 247, 255, 0.2)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = '0 0 35px rgba(0, 247, 255, 0.6), 0 0 60px rgba(0, 247, 255, 0.3)';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = '0 0 25px rgba(0, 247, 255, 0.4), 0 0 40px rgba(0, 247, 255, 0.2)';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
           >
             <Mail className="w-6 h-6" />
             Send Email
@@ -362,9 +437,6 @@ export default function Home() {
           {/* Footer Bottom */}
           <div className="border-t border-gray-700 pt-8 text-center">
             <p className="text-gray-400 mb-2">© 2026 Dian Grobbelaar. All rights reserved.</p>
-            <p className="text-gray-500 text-sm">
-              Glory and Grace Church | Prophet • Musician • MMA Artist
-            </p>
           </div>
         </div>
       </footer>
