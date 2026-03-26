@@ -121,7 +121,7 @@ export default function Home() {
                     e.currentTarget.style.boxShadow = '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)';
                   }}
                 >
-                  Join WhatsApp Channel
+                  Join the Church WhatsApp Channel
                 </a>
               </div>
             </div>
