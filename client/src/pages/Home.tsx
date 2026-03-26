@@ -182,22 +182,22 @@ export default function Home() {
       {/* Glory and Grace Church Section */}
       <section id="church" className="py-20 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left: Premium Enhanced Photo */}
-            <div className="fade-in-up order-2 md:order-1">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-magenta-500 to-lime-500 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="absolute -inset-1 bg-gradient-to-r from-magenta-500 via-lime-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-xl"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+            {/* Left: Premium 4K Photo - Full Bleed */}
+            <div className="fade-in-up order-2 md:order-1 h-full">
+              <div className="relative group h-full">
+                <div className="absolute inset-0 bg-gradient-to-r from-magenta-500 to-lime-500 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-magenta-500 via-lime-500 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-xl"></div>
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_casual_f6a25b91.jpg"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_casual_4k-kiFuBojZjqMMy6qaRuz74j.webp"
                   alt="Dian with dog"
-                  className="relative w-full h-auto rounded-2xl border-2 border-magenta-500/50 shadow-2xl object-cover image-premium-quality"
+                  className="relative w-full h-full object-cover image-premium-quality"
                 />
               </div>
             </div>
 
-            {/* Right: Church Info */}
-            <div className="slide-in-right order-1 md:order-2 space-y-8">
+            {/* Right: Church Info - Centered */}
+            <div className="slide-in-right order-1 md:order-2 space-y-8 flex flex-col justify-center h-full px-8 md:px-12">
               <div>
                 <h2 className="text-5xl md:text-6xl font-bold mb-4" style={{ color: '#FA00FF', textShadow: '0 0 10px rgba(250, 0, 255, 0.5), 0 0 20px rgba(250, 0, 255, 0.3)' }}>
                   Glory and Grace
