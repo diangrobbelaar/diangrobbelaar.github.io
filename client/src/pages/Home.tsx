@@ -183,16 +183,17 @@ export default function Home() {
       <section id="church" className="py-20 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left: 4K Original Logo */}
+            {/* Left: 4K Dog Image */}
             <div className="fade-in-up order-2 md:order-1 flex justify-center">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-magenta-500 to-lime-500 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-magenta-500 to-lime-500 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-magenta-500 via-lime-500 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-xl"></div>
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/prophet_dian_logo_original_4k_92f28861.png"
-                  alt="Prophet Dian Logo"
-                  className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl transition-transform hover:scale-110 float-animation"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_casual_4k-kiFuBojZjqMMy6qaRuz74j.webp"
+                  alt="Dian with dog on shoulder"
+                  className="relative w-72 h-96 md:w-96 md:h-full object-cover rounded-2xl drop-shadow-2xl transition-transform hover:scale-105 float-animation"
                   style={{
-                    filter: 'drop-shadow(0 0 30px rgba(0, 247, 255, 0.5))',
+                    filter: 'drop-shadow(0 0 30px rgba(250, 0, 255, 0.5))',
                   }}
                 />
               </div>
@@ -313,8 +314,8 @@ export default function Home() {
               }}
             />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-3 neon-glow-cyan">PROPHET DIAN</h2>
-          <p className="text-2xl md:text-3xl font-bold mb-8 gradient-text-cyan-magenta">All Things Prophetic</p>
+          <h2 className="text-7xl md:text-8xl font-bold mb-3 neon-glow-cyan">PROPHET DIAN</h2>
+          <p className="text-5xl md:text-6xl font-bold mb-8 gradient-text-cyan-magenta">All Things Prophetic</p>
         </div>
       </section>
 
