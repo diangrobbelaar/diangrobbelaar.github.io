@@ -77,7 +77,7 @@ export default function Home() {
               </div>
 
               <p className="text-lg leading-relaxed text-gray-200 max-w-2xl mx-auto">
-                Walking in divine purpose, expressing faith through music, and channeling spiritual strength through athletic excellence. Founder of Glory and Grace Church, dedicated to spreading the Gospel and building a community of believers.
+                The Man, the Myth, the Prophet. Dian is a Man of God, anointed by the Most High as a Prophet, chosen to deliver divine messages with power and clarity. Through his multifaceted ministry—as a Prophet proclaiming God's word, as a Musician expressing spiritual truth through melody, and as an MMA Artist demonstrating physical and spiritual discipline—Dian embodies the fullness of God's calling. Founder of Glory and Grace Church, he stands as a beacon of faith, leading believers into their divine destiny and transforming lives through the Gospel of Jesus Christ.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
