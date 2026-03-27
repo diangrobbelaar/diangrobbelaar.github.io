@@ -288,6 +288,45 @@ export default function Home() {
       {/* Premium Divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shimmer-effect"></div>
 
+      {/* Rekkies Section */}
+      <section className="py-20 px-4 md:px-8 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <h2 className="text-6xl md:text-7xl font-bold mb-8 neon-glow-lime">REKKIES</h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+            Join our exclusive community and stay connected with the latest updates, insights, and spiritual content.
+          </p>
+          <a
+            href="https://rekkiesmedia-cygcmnay.manus.space"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-10 py-5 font-bold text-lg rounded-xl transition-all duration-500 transform hover:scale-110 text-center"
+            style={{
+              background: 'linear-gradient(135deg, #00FF49 0%, #00FF49 100%)',
+              color: '#000000',
+              boxShadow: '0 0 30px rgba(0, 255, 73, 0.5), 0 0 60px rgba(0, 255, 73, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+              border: '2px solid rgba(0, 255, 73, 0.7)',
+              letterSpacing: '0.05em',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = '0 0 50px rgba(0, 255, 73, 0.7), 0 0 100px rgba(0, 255, 73, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, #00FF49 0%, #00FF73 100%)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 255, 73, 0.5), 0 0 60px rgba(0, 255, 73, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, #00FF49 0%, #00FF49 100%)';
+            }}
+          >
+            Join the Rekkies
+          </a>
+        </div>
+      </section>
+
+      {/* Premium Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-lime-500 to-transparent opacity-50 shimmer-effect"></div>
+
       {/* Prophet Dian Logo Section */}
       <section className="py-20 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
