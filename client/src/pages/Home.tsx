@@ -446,6 +446,7 @@ export default function Home() {
           {/* Footer Bottom */}
           <div className="border-t border-gray-700 pt-8 text-center">
             <p className="text-gray-400 mb-2">© 2026 Dian Grobbelaar. All rights reserved.</p>
+            <p className="text-gray-500 text-sm">Made with Manus</p>
           </div>
         </div>
       </footer>
