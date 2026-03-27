@@ -225,17 +225,21 @@ export default function Home() {
                 href="https://www.paypal.com/ncp/payment/6NG4Q34ACBTCG"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 pulse-glow transform hover:scale-105"
+                className="inline-block px-10 py-5 font-bold text-lg rounded-xl transition-all duration-500 transform hover:scale-110"
                 style={{
-                  background: '#FA00FF',
-                  color: '#000000',
-                  boxShadow: '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)',
+                  background: 'linear-gradient(135deg, #FA00FF 0%, #FA00FF 100%)',
+                  color: '#FFFFFF',
+                  boxShadow: '0 0 30px rgba(250, 0, 255, 0.5), 0 0 60px rgba(250, 0, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+                  border: '2px solid rgba(250, 0, 255, 0.7)',
+                  letterSpacing: '0.05em',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = '0 0 35px rgba(250, 0, 255, 0.6), 0 0 60px rgba(250, 0, 255, 0.3)';
+                  e.currentTarget.style.boxShadow = '0 0 50px rgba(250, 0, 255, 0.7), 0 0 100px rgba(250, 0, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #FA00FF 0%, #FF00FF 100%)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)';
+                  e.currentTarget.style.boxShadow = '0 0 30px rgba(250, 0, 255, 0.5), 0 0 60px rgba(250, 0, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #FA00FF 0%, #FA00FF 100%)';
                 }}
               >
                 Support Our Mission
