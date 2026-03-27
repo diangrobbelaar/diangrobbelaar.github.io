@@ -291,10 +291,7 @@ export default function Home() {
       {/* Rekkies Section */}
       <section className="py-20 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <h2 className="text-6xl md:text-7xl font-bold mb-8 neon-glow-lime">REKKIES</h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Join our exclusive community and stay connected with the latest updates, insights, and spiritual content.
-          </p>
+          <h2 className="text-6xl md:text-7xl font-bold mb-12 neon-glow-lime">REKKIES</h2>
           <a
             href="https://rekkiesmedia-cygcmnay.manus.space"
             target="_blank"
