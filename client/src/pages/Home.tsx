@@ -40,21 +40,17 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-black/95 backdrop-blur-xl border-b border-cyan-500/20 shadow-2xl' : 'bg-transparent'
-        }`}
-      >
+      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-center items-center">
-          <div className="text-3xl font-bold neon-glow-cyan tracking-wider">PROPHET DIAN</div>
+          <div className="text-3xl font-bold" style={{ color: '#FA00FF', letterSpacing: '0.08em' }}>PROPHET DIAN</div>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left: Image with Premium Effects */}
+        <div className="max-w-7xl mx-auto relative z-10 flex justify-center">
+          <div className="flex flex-col items-center text-center space-y-8 max-w-3xl">
+            {/* Center: Image with Premium Effects */}
             <div className="fade-in-up">
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-magenta-500 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -62,14 +58,14 @@ export default function Home() {
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_formal_a961f443.jpg"
                   alt="Dian Grobbelaar"
-                  className="relative w-full h-auto rounded-2xl border-2 border-cyan-500/50 shadow-2xl object-cover image-premium-quality"
+                  className="relative w-80 h-auto rounded-2xl border-2 border-cyan-500/50 shadow-2xl object-cover image-premium-quality"
                 />
               </div>
             </div>
 
-            {/* Right: Hero Text */}
+            {/* Center: Hero Text */}
             <div className="slide-in-right space-y-8">
-              <div className="text-center md:text-left">
+              <div className="text-center">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                   <span className="neon-glow-cyan">DIAN</span>
                   <br />
@@ -80,11 +76,11 @@ export default function Home() {
                 </p>
               </div>
 
-              <p className="text-lg leading-relaxed text-gray-200 max-w-lg">
+              <p className="text-lg leading-relaxed text-gray-200 max-w-2xl mx-auto">
                 Walking in divine purpose, expressing faith through music, and channeling spiritual strength through athletic excellence. Founder of Glory and Grace Church, dedicated to spreading the Gospel and building a community of believers.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
                 <a
                   href="https://www.paypal.com/ncp/payment/6NG4Q34ACBTCG"
                   target="_blank"
