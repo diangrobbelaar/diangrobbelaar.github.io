@@ -42,7 +42,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-center items-center">
-          <div className="text-3xl font-bold" style={{ color: '#FA00FF', letterSpacing: '0.08em' }}>PROPHET DIAN</div>
+          <div className="text-3xl font-bold" style={{ color: '#00F7FF', letterSpacing: '0.08em', textShadow: '0 0 15px rgba(0, 247, 255, 0.5)' }}>PROPHET DIAN</div>
         </div>
       </nav>
 
@@ -221,13 +221,16 @@ export default function Home() {
                 href="https://www.paypal.com/ncp/payment/6NG4Q34ACBTCG"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-10 py-5 font-bold text-lg rounded-xl transition-all duration-500 transform hover:scale-110"
+                className="inline-block px-10 py-5 font-bold text-lg rounded-xl transition-all duration-500 transform hover:scale-110 text-center"
                 style={{
                   background: 'linear-gradient(135deg, #FA00FF 0%, #FA00FF 100%)',
                   color: '#FFFFFF',
                   boxShadow: '0 0 30px rgba(250, 0, 255, 0.5), 0 0 60px rgba(250, 0, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
                   border: '2px solid rgba(250, 0, 255, 0.7)',
                   letterSpacing: '0.05em',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = '0 0 50px rgba(250, 0, 255, 0.7), 0 0 100px rgba(250, 0, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
