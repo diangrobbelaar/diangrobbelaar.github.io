@@ -339,6 +339,77 @@ export default function Home() {
           </div>
           <h2 className="text-7xl md:text-8xl font-bold mb-3 neon-glow-cyan">PROPHET DIAN</h2>
           <p className="text-5xl md:text-6xl font-bold mb-8 gradient-text-cyan-magenta">All Things Prophetic</p>
+          
+          {/* Social Media Icons */}
+          <div className="flex justify-center gap-6 mt-12">
+            <a
+              href="https://www.instagram.com/prophet.dian?igsh=MzY2YWFjaXV0dHJo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+              aria-label="Instagram"
+            >
+              <div className="p-4 rounded-full transition-all duration-300 transform hover:scale-110" style={{
+                background: 'rgba(0, 247, 255, 0.1)',
+                border: '2px solid #00F7FF',
+                boxShadow: '0 0 15px rgba(0, 247, 255, 0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 247, 255, 0.6), 0 0 50px rgba(0, 247, 255, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 247, 255, 0.3)';
+              }}>
+                <Instagram size={28} color="#00F7FF" />
+              </div>
+            </a>
+            
+            <a
+              href="https://www.facebook.com/share/1AerrQ7YJJ/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+              aria-label="Facebook"
+            >
+              <div className="p-4 rounded-full transition-all duration-300 transform hover:scale-110" style={{
+                background: 'rgba(250, 0, 255, 0.1)',
+                border: '2px solid #FA00FF',
+                boxShadow: '0 0 15px rgba(250, 0, 255, 0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 30px rgba(250, 0, 255, 0.6), 0 0 50px rgba(250, 0, 255, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 15px rgba(250, 0, 255, 0.3)';
+              }}>
+                <Facebook size={28} color="#FA00FF" />
+              </div>
+            </a>
+            
+            <a
+              href="https://x.com/Prophet_Dian"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+              aria-label="X"
+            >
+              <div className="p-4 rounded-full transition-all duration-300 transform hover:scale-110" style={{
+                background: 'rgba(0, 255, 73, 0.1)',
+                border: '2px solid #00FF49',
+                boxShadow: '0 0 15px rgba(0, 255, 73, 0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 255, 73, 0.6), 0 0 50px rgba(0, 255, 73, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 255, 73, 0.3)';
+              }}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF49" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4l16 16M20 4l-16 16" />
+                </svg>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
