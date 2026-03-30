@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, Instagram, Facebook, Music, Zap, Heart, Users, MessageCircle } from 'lucide-react';
+import { Mail, Instagram, Facebook, Music, Zap, Heart, Users, MessageCircle, Youtube } from 'lucide-react';
 
 /**
  * Design System: Neon Spirituality
@@ -407,6 +407,28 @@ export default function Home() {
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF49" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 4l16 16M20 4l-16 16" />
                 </svg>
+              </div>
+            </a>
+            
+            <a
+              href="https://www.youtube.com/@prophetdian"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+              aria-label="YouTube"
+            >
+              <div className="p-4 rounded-full transition-all duration-300 transform hover:scale-110" style={{
+                background: 'rgba(0, 247, 255, 0.1)',
+                border: '2px solid #00F7FF',
+                boxShadow: '0 0 15px rgba(0, 247, 255, 0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 247, 255, 0.6), 0 0 50px rgba(0, 247, 255, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 247, 255, 0.3)';
+              }}>
+                <Youtube size={28} color="#00F7FF" />
               </div>
             </a>
           </div>
