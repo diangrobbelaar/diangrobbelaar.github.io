@@ -460,9 +460,15 @@ export default function Home() {
             <span className="particle-cyan-1"></span>
             <span className="particle-cyan-2"></span>
             <span className="particle-cyan-3"></span>
+            <span className="particle-white-1"></span>
+            <span className="particle-white-2"></span>
+            <span className="particle-white-3"></span>
             <span className="particle-gold-1"></span>
             <span className="particle-gold-2"></span>
             <span className="particle-gold-3"></span>
+            <span className="particle-gold-4"></span>
+            <span className="particle-gold-5"></span>
+            <span className="particle-gold-6"></span>
             Join NAVI Society
           </a>
         </div>

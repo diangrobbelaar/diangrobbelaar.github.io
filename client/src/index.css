@@ -530,6 +530,23 @@ p {
   }
 }
 
+@keyframes float-particle-white {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(15px);
+    opacity: 0;
+  }
+}
+
 @keyframes float-particle-golden {
   0% {
     transform: translateY(0px) translateX(0px);
@@ -564,9 +581,9 @@ p {
 .floating-particles::before {
   left: 15%;
   bottom: 0;
-  background: #00F7FF;
-  box-shadow: 0 0 10px rgba(0, 247, 255, 0.6);
-  animation: float-particle 2.5s ease-in infinite;
+  background: #FFFFFF;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  animation: float-particle-white 2.5s ease-in infinite;
 }
 
 .floating-particles::after {
@@ -582,12 +599,12 @@ p {
   position: absolute;
   width: 5px;
   height: 5px;
-  background: #00F7FF;
+  background: #FFFFFF;
   border-radius: 50%;
   bottom: 0;
   left: 25%;
-  box-shadow: 0 0 8px rgba(0, 247, 255, 0.5);
-  animation: float-particle 2.8s ease-in infinite 0.4s;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  animation: float-particle-white 2.8s ease-in infinite 0.4s;
   pointer-events: none;
 }
 
@@ -595,12 +612,12 @@ p {
   position: absolute;
   width: 4px;
   height: 4px;
-  background: #00F7FF;
+  background: #FFFFFF;
   border-radius: 50%;
   bottom: 0;
   left: 35%;
-  box-shadow: 0 0 6px rgba(0, 247, 255, 0.4);
-  animation: float-particle 3.2s ease-in infinite 0.6s;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  animation: float-particle-white 3.2s ease-in infinite 0.6s;
   pointer-events: none;
 }
 
@@ -608,12 +625,51 @@ p {
   position: absolute;
   width: 5px;
   height: 5px;
-  background: #00F7FF;
+  background: #FFFFFF;
   border-radius: 50%;
   bottom: 0;
   left: 10%;
-  box-shadow: 0 0 8px rgba(0, 247, 255, 0.5);
-  animation: float-particle 3.5s ease-in infinite 0.2s;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  animation: float-particle-white 3.5s ease-in infinite 0.2s;
+  pointer-events: none;
+}
+
+.floating-particles .particle-white-1 {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  bottom: 0;
+  left: 5%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  animation: float-particle-white 2.9s ease-in infinite 0.3s;
+  pointer-events: none;
+}
+
+.floating-particles .particle-white-2 {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  bottom: 0;
+  left: 45%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  animation: float-particle-white 3.3s ease-in infinite 0.7s;
+  pointer-events: none;
+}
+
+.floating-particles .particle-white-3 {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  bottom: 0;
+  left: 55%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  animation: float-particle-white 3.1s ease-in infinite 0.5s;
   pointer-events: none;
 }
 
@@ -654,6 +710,45 @@ p {
   right: 10%;
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
   animation: float-particle-golden 3.1s ease-in infinite 0.1s;
+  pointer-events: none;
+}
+
+.floating-particles .particle-gold-4 {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #FFD700;
+  border-radius: 50%;
+  bottom: 0;
+  right: 5%;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+  animation: float-particle-golden 2.8s ease-in infinite 0.2s;
+  pointer-events: none;
+}
+
+.floating-particles .particle-gold-5 {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #FFD700;
+  border-radius: 50%;
+  bottom: 0;
+  right: 45%;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+  animation: float-particle-golden 3.4s ease-in infinite 0.6s;
+  pointer-events: none;
+}
+
+.floating-particles .particle-gold-6 {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #FFD700;
+  border-radius: 50%;
+  bottom: 0;
+  right: 55%;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+  animation: float-particle-golden 3.2s ease-in infinite 0.4s;
   pointer-events: none;
 }
 
