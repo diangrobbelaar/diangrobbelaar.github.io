@@ -440,7 +440,7 @@ export default function Home() {
             href="https://upgrade.chat/navisociety"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 floating-particles neon-flicker"
+            className="px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 floating-particles neon-flicker navi-button-enhanced"
             style={{
               background: '#00F7FF',
               color: '#000000',
