@@ -525,7 +525,24 @@ p {
     opacity: 1;
   }
   100% {
-    transform: translateY(-80px) translateX(20px);
+    transform: translateY(-100px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes float-particle-golden {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(-20px);
     opacity: 0;
   }
 }
@@ -538,24 +555,106 @@ p {
 .floating-particles::after {
   content: '';
   position: absolute;
-  width: 8px;
-  height: 8px;
-  background: #00F7FF;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   pointer-events: none;
-  box-shadow: 0 0 10px rgba(0, 247, 255, 0.6);
 }
 
 .floating-particles::before {
-  left: 20%;
+  left: 15%;
   bottom: 0;
-  animation: float-particle 3s ease-in infinite;
+  background: #00F7FF;
+  box-shadow: 0 0 10px rgba(0, 247, 255, 0.6);
+  animation: float-particle 2.5s ease-in infinite;
 }
 
 .floating-particles::after {
-  right: 20%;
+  right: 15%;
   bottom: 0;
-  animation: float-particle 3.5s ease-in infinite 0.5s;
+  background: #FFD700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  animation: float-particle-golden 3s ease-in infinite 0.3s;
+}
+
+/* Additional cyan particles */
+.floating-particles .particle-cyan-1 {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #00F7FF;
+  border-radius: 50%;
+  bottom: 0;
+  left: 25%;
+  box-shadow: 0 0 8px rgba(0, 247, 255, 0.5);
+  animation: float-particle 2.8s ease-in infinite 0.4s;
+  pointer-events: none;
+}
+
+.floating-particles .particle-cyan-2 {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00F7FF;
+  border-radius: 50%;
+  bottom: 0;
+  left: 35%;
+  box-shadow: 0 0 6px rgba(0, 247, 255, 0.4);
+  animation: float-particle 3.2s ease-in infinite 0.6s;
+  pointer-events: none;
+}
+
+.floating-particles .particle-cyan-3 {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #00F7FF;
+  border-radius: 50%;
+  bottom: 0;
+  left: 10%;
+  box-shadow: 0 0 8px rgba(0, 247, 255, 0.5);
+  animation: float-particle 3.5s ease-in infinite 0.2s;
+  pointer-events: none;
+}
+
+/* Additional golden particles */
+.floating-particles .particle-gold-1 {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #FFD700;
+  border-radius: 50%;
+  bottom: 0;
+  right: 25%;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+  animation: float-particle-golden 2.9s ease-in infinite 0.5s;
+  pointer-events: none;
+}
+
+.floating-particles .particle-gold-2 {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #FFD700;
+  border-radius: 50%;
+  bottom: 0;
+  right: 35%;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+  animation: float-particle-golden 3.3s ease-in infinite 0.7s;
+  pointer-events: none;
+}
+
+.floating-particles .particle-gold-3 {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #FFD700;
+  border-radius: 50%;
+  bottom: 0;
+  right: 10%;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+  animation: float-particle-golden 3.1s ease-in infinite 0.1s;
+  pointer-events: none;
 }
 
 /* Neon Flicker Animation */
