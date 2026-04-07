@@ -433,6 +433,32 @@ export default function Home() {
             </a>
           </div>
         </div>
+        
+        {/* Join NAVI Society Button */}
+        <div className="mt-8 flex justify-center">
+          <a
+            href="https://website.upgrade.chat/navisociety"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105"
+            style={{
+              background: '#00F7FF',
+              color: '#000000',
+              border: '2px solid #00F7FF',
+              boxShadow: '0 0 20px rgba(0, 247, 255, 0.4)',
+              textDecoration: 'none',
+              display: 'inline-block',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = '0 0 40px rgba(0, 247, 255, 0.8), 0 0 60px rgba(0, 247, 255, 0.5)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = '0 0 20px rgba(0, 247, 255, 0.4)';
+            }}
+          >
+            Join NAVI Society
+          </a>
+        </div>
       </section>
 
       {/* Contact Section */}
