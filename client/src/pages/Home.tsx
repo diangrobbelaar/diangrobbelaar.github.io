@@ -293,7 +293,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <h2 className="text-6xl md:text-7xl font-bold mb-12 neon-glow-lime">REKKIES</h2>
           <a
-            href="https://rekkiesmedia-cygcmnay.manus.space"
+            href="https://upgrade.chat/rekkies"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-5 font-bold text-lg rounded-xl transition-all duration-500 transform hover:scale-110 text-center"
@@ -578,7 +578,7 @@ export default function Home() {
           {/* Footer Bottom */}
           <div className="border-t border-gray-700 pt-8 text-center">
             <p className="text-gray-400 mb-2">© 2026 Dian Grobbelaar. All rights reserved.</p>
-            <p className="text-gray-500 text-sm">Made with Manus</p>
+
           </div>
         </div>
       </footer>
