@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, Instagram, Facebook, Music, Zap, Heart, Users, MessageCircle } from 'lucide-react';
+import { Mail, Instagram, Facebook, Music, Zap, Heart, Users, MessageCircle, Youtube } from 'lucide-react';
 
 /**
  * Design System: Neon Spirituality
@@ -15,18 +15,32 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
+    let ticking = false;
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setMousePosition({ x: e.clientX, y: e.clientY });
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
@@ -293,7 +307,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <h2 className="text-6xl md:text-7xl font-bold mb-12 neon-glow-lime">REKKIES</h2>
           <a
-            href="https://rekkiesmedia-cygcmnay.manus.space"
+            href="https://upgrade.chat/rekkies"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-5 font-bold text-lg rounded-xl transition-all duration-500 transform hover:scale-110 text-center"
@@ -339,6 +353,138 @@ export default function Home() {
           </div>
           <h2 className="text-7xl md:text-8xl font-bold mb-3 neon-glow-cyan">PROPHET DIAN</h2>
           <p className="text-5xl md:text-6xl font-bold mb-8 gradient-text-cyan-magenta">All Things Prophetic</p>
+          
+          {/* Social Media Icons */}
+          <div className="flex justify-center gap-6 mt-12">
+            <a
+              href="https://www.instagram.com/prophet.dian?igsh=MzY2YWFjaXV0dHJo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+              aria-label="Instagram"
+            >
+              <div className="p-4 rounded-full transition-all duration-300 transform hover:scale-110" style={{
+                background: 'rgba(0, 247, 255, 0.1)',
+                border: '2px solid #00F7FF',
+                boxShadow: '0 0 15px rgba(0, 247, 255, 0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 247, 255, 0.6), 0 0 50px rgba(0, 247, 255, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 247, 255, 0.3)';
+              }}>
+                <Instagram size={28} color="#00F7FF" />
+              </div>
+            </a>
+            
+            <a
+              href="https://www.facebook.com/share/1AerrQ7YJJ/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+              aria-label="Facebook"
+            >
+              <div className="p-4 rounded-full transition-all duration-300 transform hover:scale-110" style={{
+                background: 'rgba(250, 0, 255, 0.1)',
+                border: '2px solid #FA00FF',
+                boxShadow: '0 0 15px rgba(250, 0, 255, 0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 30px rgba(250, 0, 255, 0.6), 0 0 50px rgba(250, 0, 255, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 15px rgba(250, 0, 255, 0.3)';
+              }}>
+                <Facebook size={28} color="#FA00FF" />
+              </div>
+            </a>
+            
+            <a
+              href="https://x.com/Prophet_Dian"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+              aria-label="X"
+            >
+              <div className="p-4 rounded-full transition-all duration-300 transform hover:scale-110" style={{
+                background: 'rgba(0, 255, 73, 0.1)',
+                border: '2px solid #00FF49',
+                boxShadow: '0 0 15px rgba(0, 255, 73, 0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 255, 73, 0.6), 0 0 50px rgba(0, 255, 73, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 255, 73, 0.3)';
+              }}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF49" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4l16 16M20 4l-16 16" />
+                </svg>
+              </div>
+            </a>
+            
+            <a
+              href="https://www.youtube.com/@prophetdian"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+              aria-label="YouTube"
+            >
+              <div className="p-4 rounded-full transition-all duration-300 transform hover:scale-110" style={{
+                background: 'rgba(0, 247, 255, 0.1)',
+                border: '2px solid #00F7FF',
+                boxShadow: '0 0 15px rgba(0, 247, 255, 0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 247, 255, 0.6), 0 0 50px rgba(0, 247, 255, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 247, 255, 0.3)';
+              }}>
+                <Youtube size={28} color="#00F7FF" />
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        {/* Join NAVI Society Button */}
+        <div className="mt-8 flex justify-center">
+          <a
+            href="https://upgrade.chat/navisociety"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-12 py-6 rounded-lg font-bold text-2xl transition-all duration-300 transform hover:scale-105 floating-particles neon-flicker navi-button-enhanced"
+            style={{
+              background: '#00F7FF',
+              color: '#000000',
+              border: '3px solid #00F7FF',
+              boxShadow: '0 0 20px rgba(0, 247, 255, 0.4)',
+              textDecoration: 'none',
+              display: 'inline-block',
+              letterSpacing: '0.05em',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = '0 0 40px rgba(0, 247, 255, 0.8), 0 0 60px rgba(0, 247, 255, 0.5)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = '0 0 20px rgba(0, 247, 255, 0.4)';
+            }}
+          >
+            <span className="particle-cyan-1"></span>
+            <span className="particle-cyan-2"></span>
+            <span className="particle-cyan-3"></span>
+            <span className="particle-white-1"></span>
+            <span className="particle-white-2"></span>
+            <span className="particle-white-3"></span>
+            <span className="particle-gold-1"></span>
+            <span className="particle-gold-2"></span>
+            <span className="particle-gold-3"></span>
+            <span className="particle-gold-4"></span>
+            <span className="particle-gold-5"></span>
+            <span className="particle-gold-6"></span>
+            Join NAVI Society
+          </a>
         </div>
       </section>
 
@@ -446,7 +592,7 @@ export default function Home() {
           {/* Footer Bottom */}
           <div className="border-t border-gray-700 pt-8 text-center">
             <p className="text-gray-400 mb-2">© 2026 Dian Grobbelaar. All rights reserved.</p>
-            <p className="text-gray-500 text-sm">Made with Manus</p>
+
           </div>
         </div>
       </footer>
