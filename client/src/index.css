@@ -1415,12 +1415,12 @@ p {
 
 /* Apex NAVI Button - Maximum Enhancement */
 .navi-button-apex {
-  animation: prophetic-pulse-ring 2.5s ease-in-out infinite,
-             holographic-shimmer 5s ease infinite,
-             quantum-pulse 3s ease-in-out infinite,
-             chromatic-aberration 2s ease-in-out infinite,
-             fractal-dimension 4s ease-in-out infinite,
-             luminous-pulse 2s ease-in-out infinite;
+  animation: prophetic-pulse-ring 3s ease-in-out infinite,
+             holographic-shimmer 6s ease-in-out infinite,
+             quantum-pulse 3.5s ease-in-out infinite,
+             chromatic-aberration 2.5s ease-in-out infinite,
+             fractal-dimension 5s ease-in-out infinite,
+             luminous-pulse 2.5s ease-in-out infinite;
   position: relative;
   overflow: visible;
   background: linear-gradient(-45deg, #00FF49, #00DD3F, #00FF49, #00DD3F, #00FF49, #00FF49);
@@ -1442,7 +1442,7 @@ p {
   background: conic-gradient(from 0deg, #00F7FF, #00FF49, #FA00FF, #00F7FF, #00FF49);
   border-radius: 50%;
   opacity: 0.6;
-  animation: ethereal-vortex 4s linear infinite, holographic-shimmer 5s ease infinite;
+  animation: ethereal-vortex 5s linear infinite, holographic-shimmer 6s ease-in-out infinite;
   pointer-events: none;
   z-index: -1;
   filter: blur(2px) brightness(1.2);
@@ -1455,7 +1455,7 @@ p {
   inset: -8px;
   background: radial-gradient(circle, rgba(0, 247, 255, 0.8) 0%, rgba(0, 255, 73, 0.4) 40%, transparent 70%);
   border-radius: 50%;
-  animation: mystical-aura 2.5s ease-in-out infinite, dimensional-portal 6s ease-in-out infinite;
+  animation: mystical-aura 3s ease-in-out infinite, dimensional-portal 7s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -1469,7 +1469,7 @@ p {
   border-radius: 6px;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.3),
                0 2px 4px rgba(0, 0, 0, 0.2);
-  animation: chromatic-aberration 2s ease-in-out infinite, luminous-pulse 2s ease-in-out infinite;
+  animation: chromatic-aberration 2.5s ease-in-out infinite, luminous-pulse 2.5s ease-in-out infinite;
   font-weight: 900;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1491,7 +1491,7 @@ p {
   box-shadow: 0 0 15px rgba(0, 247, 255, 1),
               0 0 30px rgba(0, 255, 73, 0.8),
               0 0 50px rgba(0, 247, 255, 0.4);
-  animation: divine-spark 1.5s ease-in-out infinite, cosmic-ray 2s ease-in-out infinite;
+  animation: divine-spark 2s ease-in-out infinite, cosmic-ray 2.5s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -1512,7 +1512,7 @@ p {
   border: 2px solid rgba(0, 247, 255, 0.6);
   border-radius: 50%;
   pointer-events: none;
-  animation: radiant-pulse-wave 2s ease-out infinite;
+  animation: radiant-pulse-wave 2.5s ease-in-out infinite;
 }
 
 .apex-radiant-ring:nth-child(11) {
@@ -1580,11 +1580,11 @@ p {
 
 .navi-button-apex:hover::before {
   opacity: 1;
-  animation: ethereal-vortex 2s linear infinite, holographic-shimmer 3s ease infinite;
+  animation: ethereal-vortex 3s linear infinite, holographic-shimmer 4s ease-in-out infinite;
 }
 
 .navi-button-apex:hover::after {
-  animation: mystical-aura 1.5s ease-in-out infinite, dimensional-portal 4s ease-in-out infinite;
+  animation: mystical-aura 2s ease-in-out infinite, dimensional-portal 5s ease-in-out infinite;
 }
 
 .navi-button-apex:hover .apex-spark {
@@ -1595,5 +1595,5 @@ p {
 
 .navi-button-apex:hover .apex-radiant-ring {
   border-color: rgba(0, 247, 255, 1);
-  animation: radiant-pulse-wave 1s ease-out infinite;
+  animation: radiant-pulse-wave 1.5s ease-in-out infinite;
 }

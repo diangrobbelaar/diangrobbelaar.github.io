@@ -95,6 +95,7 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center flex-wrap">
+                <div className="w-full"></div>
                 <a
                   href="https://www.paypal.com/ncp/payment/6NG4Q34ACBTCG"
                   target="_blank"
@@ -215,6 +216,7 @@ export default function Home() {
                   <span className="cosmic-ray-element"></span>
                   <span className="navi-button-apex-text">Join NAVI Society</span>
                 </a>
+                <div className="w-full"></div>
               </div>
             </div>
           </div>
