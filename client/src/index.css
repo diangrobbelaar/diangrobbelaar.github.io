@@ -1441,11 +1441,12 @@ p {
   inset: -16px;
   background: conic-gradient(from 0deg, #00F7FF, #00FF49, #FA00FF, #00F7FF, #00FF49);
   border-radius: 50%;
-  opacity: 0.6;
-  animation: ethereal-vortex 6s linear infinite, holographic-shimmer 8s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  opacity: 0;
+  animation: none;
   pointer-events: none;
   z-index: -1;
   filter: blur(2px) brightness(1.2);
+  display: none;
 }
 
 /* Apex Divine Aura - Maximum */
@@ -1579,8 +1580,9 @@ p {
 }
 
 .navi-button-apex:hover::before {
-  opacity: 1;
-  animation: ethereal-vortex 4s linear infinite, holographic-shimmer 5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  opacity: 0;
+  animation: none;
+  display: none;
 }
 
 .navi-button-apex:hover::after {
