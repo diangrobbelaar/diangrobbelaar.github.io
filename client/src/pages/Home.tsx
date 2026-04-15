@@ -94,7 +94,7 @@ export default function Home() {
                 The Man, the Myth, the Prophet. Dian is a Man of God, anointed by the Most High as a Prophet, chosen to deliver divine messages with power and clarity. Through his multifaceted ministry—as a Prophet proclaiming God's word, as a Musician expressing spiritual truth through melody, and as an MMA Artist demonstrating physical and spiritual discipline—Dian embodies the fullness of God's calling. Founder of Glory and Grace Church, he stands as a beacon of faith, leading believers into their divine destiny and transforming lives through the Gospel of Jesus Christ.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center flex-wrap">
                 <a
                   href="https://www.paypal.com/ncp/payment/6NG4Q34ACBTCG"
                   target="_blank"
@@ -164,6 +164,32 @@ export default function Home() {
                   <span className="particle-gold-5"></span>
                   <span className="particle-gold-6"></span>
                   Join the Church WhatsApp Channel
+                </a>
+                <a
+                  href="https://upgrade.chat/navisociety"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-12 py-6 rounded-lg font-bold text-2xl transition-all duration-300 transform hover:scale-105 navi-button-alt"
+                  style={{
+                    background: 'linear-gradient(-45deg, #00FF49, #00DD3F, #00FF49, #00DD3F)',
+                    backgroundSize: '400% 400%',
+                    color: '#000000',
+                    border: '3px solid #00FF49',
+                    boxShadow: '0 0 30px rgba(0, 255, 73, 0.6), 0 0 60px rgba(0, 255, 73, 0.3)',
+                    textDecoration: 'none',
+                    display: 'inline-block',
+                    letterSpacing: '0.05em',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 0 50px rgba(0, 255, 73, 0.9), 0 0 80px rgba(0, 255, 73, 0.6), 0 0 120px rgba(0, 255, 73, 0.3)';
+                    e.currentTarget.style.transform = 'scale(1.08)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 255, 73, 0.6), 0 0 60px rgba(0, 255, 73, 0.3)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                >
+                  <span className="navi-button-alt-text">Join NAVI Society</span>
                 </a>
               </div>
             </div>
@@ -480,7 +506,7 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Join NAVI Society Button */}
+        {/* Join NAVI Society Button - Cyan Particles */}
         <div className="mt-8 flex justify-center">
           <a
             href="https://upgrade.chat/navisociety"
