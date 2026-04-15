@@ -169,23 +169,23 @@ export default function Home() {
                   href="https://upgrade.chat/navisociety"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-12 py-6 rounded-lg font-bold text-2xl transition-all duration-300 transform hover:scale-105 navi-button-alt"
+                  className="px-16 py-8 rounded-lg font-bold text-3xl transition-all duration-300 transform hover:scale-110 navi-button-alt"
                   style={{
-                    background: 'linear-gradient(-45deg, #00FF49, #00DD3F, #00FF49, #00DD3F)',
-                    backgroundSize: '400% 400%',
+                    background: 'linear-gradient(-45deg, #00FF49, #00DD3F, #00FF49, #00DD3F, #00FF49)',
+                    backgroundSize: '500% 500%',
                     color: '#000000',
-                    border: '3px solid #00FF49',
-                    boxShadow: '0 0 30px rgba(0, 255, 73, 0.6), 0 0 60px rgba(0, 255, 73, 0.3)',
+                    border: '4px solid #00FF49',
+                    boxShadow: '0 0 40px rgba(0, 247, 255, 0.7), 0 0 80px rgba(0, 255, 73, 0.4), 0 0 120px rgba(0, 247, 255, 0.2)',
                     textDecoration: 'none',
                     display: 'inline-block',
-                    letterSpacing: '0.05em',
+                    letterSpacing: '0.08em',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 50px rgba(0, 255, 73, 0.9), 0 0 80px rgba(0, 255, 73, 0.6), 0 0 120px rgba(0, 255, 73, 0.3)';
-                    e.currentTarget.style.transform = 'scale(1.08)';
+                    e.currentTarget.style.boxShadow = '0 0 60px rgba(0, 247, 255, 1), 0 0 100px rgba(0, 255, 73, 0.8), 0 0 150px rgba(0, 247, 255, 0.5)';
+                    e.currentTarget.style.transform = 'scale(1.12)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 255, 73, 0.6), 0 0 60px rgba(0, 255, 73, 0.3)';
+                    e.currentTarget.style.boxShadow = '0 0 40px rgba(0, 247, 255, 0.7), 0 0 80px rgba(0, 255, 73, 0.4), 0 0 120px rgba(0, 247, 255, 0.2)';
                     e.currentTarget.style.transform = 'scale(1)';
                   }}
                 >
