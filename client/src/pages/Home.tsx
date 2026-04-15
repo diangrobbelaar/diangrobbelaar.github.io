@@ -99,38 +99,70 @@ export default function Home() {
                   href="https://www.paypal.com/ncp/payment/6NG4Q34ACBTCG"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 text-center pulse-glow transform hover:scale-105"
+                  className="px-12 py-6 rounded-lg font-bold text-2xl transition-all duration-300 transform hover:scale-105 floating-particles neon-flicker navi-button-enhanced"
                   style={{
                     background: '#00F7FF',
                     color: '#000000',
-                    boxShadow: '0 0 25px rgba(0, 247, 255, 0.4), 0 0 40px rgba(0, 247, 255, 0.2)',
+                    border: '3px solid #00F7FF',
+                    boxShadow: '0 0 20px rgba(0, 247, 255, 0.4)',
+                    textDecoration: 'none',
+                    display: 'inline-block',
+                    letterSpacing: '0.05em',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 35px rgba(0, 247, 255, 0.6), 0 0 60px rgba(0, 247, 255, 0.3)';
+                    e.currentTarget.style.boxShadow = '0 0 40px rgba(0, 247, 255, 0.8), 0 0 60px rgba(0, 247, 255, 0.5)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 25px rgba(0, 247, 255, 0.4), 0 0 40px rgba(0, 247, 255, 0.2)';
+                    e.currentTarget.style.boxShadow = '0 0 20px rgba(0, 247, 255, 0.4)';
                   }}
                 >
+                  <span className="particle-cyan-1"></span>
+                  <span className="particle-cyan-2"></span>
+                  <span className="particle-cyan-3"></span>
+                  <span className="particle-white-1"></span>
+                  <span className="particle-white-2"></span>
+                  <span className="particle-white-3"></span>
+                  <span className="particle-gold-1"></span>
+                  <span className="particle-gold-2"></span>
+                  <span className="particle-gold-3"></span>
+                  <span className="particle-gold-4"></span>
+                  <span className="particle-gold-5"></span>
+                  <span className="particle-gold-6"></span>
                   Give to the Church
                 </a>
                 <a
                   href="https://whatsapp.com/channel/0029VbBpoyx05MUhjSNxvS17"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 text-center transform hover:scale-105"
+                  className="px-12 py-6 rounded-lg font-bold text-2xl transition-all duration-300 transform hover:scale-105 floating-particles neon-flicker navi-button-enhanced"
                   style={{
                     background: '#FA00FF',
                     color: '#000000',
-                    boxShadow: '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)',
+                    border: '3px solid #FA00FF',
+                    boxShadow: '0 0 20px rgba(250, 0, 255, 0.4)',
+                    textDecoration: 'none',
+                    display: 'inline-block',
+                    letterSpacing: '0.05em',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 35px rgba(250, 0, 255, 0.6), 0 0 60px rgba(250, 0, 255, 0.2)';
+                    e.currentTarget.style.boxShadow = '0 0 40px rgba(250, 0, 255, 0.8), 0 0 60px rgba(250, 0, 255, 0.5)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)';
+                    e.currentTarget.style.boxShadow = '0 0 20px rgba(250, 0, 255, 0.4)';
                   }}
                 >
+                  <span className="particle-cyan-1"></span>
+                  <span className="particle-cyan-2"></span>
+                  <span className="particle-cyan-3"></span>
+                  <span className="particle-white-1"></span>
+                  <span className="particle-white-2"></span>
+                  <span className="particle-white-3"></span>
+                  <span className="particle-gold-1"></span>
+                  <span className="particle-gold-2"></span>
+                  <span className="particle-gold-3"></span>
+                  <span className="particle-gold-4"></span>
+                  <span className="particle-gold-5"></span>
+                  <span className="particle-gold-6"></span>
                   Join the Church WhatsApp Channel
                 </a>
               </div>
