@@ -169,41 +169,51 @@ export default function Home() {
                   href="https://upgrade.chat/navisociety"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-16 py-8 rounded-lg font-bold text-3xl transition-all duration-300 navi-button-ultra"
+                  className="px-16 py-8 rounded-lg font-bold text-3xl transition-all duration-300 navi-button-apex"
                   style={{
-                    background: 'linear-gradient(-45deg, #00FF49, #00DD3F, #00FF49, #00DD3F, #00FF49)',
-                    backgroundSize: '500% 500%',
+                    background: 'linear-gradient(-45deg, #00FF49, #00DD3F, #00FF49, #00DD3F, #00FF49, #00FF49)',
+                    backgroundSize: '600% 600%',
                     color: '#00F7FF',
                     border: '4px solid #00FF49',
-                    boxShadow: '0 0 40px rgba(0, 247, 255, 0.7), 0 0 80px rgba(0, 255, 73, 0.4), 0 0 120px rgba(0, 247, 255, 0.2), inset 0 0 30px rgba(0, 247, 255, 0.2)',
+                    boxShadow: '0 0 50px rgba(0, 247, 255, 0.8), 0 0 100px rgba(0, 255, 73, 0.5), 0 0 150px rgba(0, 247, 255, 0.3), inset 0 0 40px rgba(0, 247, 255, 0.3)',
                     textDecoration: 'none',
                     display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    letterSpacing: '0.12em',
+                    letterSpacing: '0.15em',
                     position: 'relative',
+                    filter: 'drop-shadow(0 0 10px rgba(0, 247, 255, 0.6))',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 80px rgba(0, 247, 255, 1), 0 0 120px rgba(0, 255, 73, 0.9), 0 0 180px rgba(0, 247, 255, 0.6), 0 0 250px rgba(0, 255, 73, 0.4), inset 0 0 50px rgba(0, 247, 255, 0.4)';
-                    e.currentTarget.style.transform = 'scale(1.2)';
+                    e.currentTarget.style.boxShadow = '0 0 100px rgba(0, 247, 255, 1), 0 0 150px rgba(0, 255, 73, 1), 0 0 200px rgba(0, 247, 255, 0.8), 0 0 300px rgba(0, 255, 73, 0.6), inset 0 0 60px rgba(0, 247, 255, 0.5)';
+                    e.currentTarget.style.transform = 'scale(1.25)';
+                    e.currentTarget.style.filter = 'drop-shadow(0 0 20px rgba(0, 247, 255, 1)) drop-shadow(0 0 40px rgba(0, 255, 73, 0.8)) brightness(1.3)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 40px rgba(0, 247, 255, 0.7), 0 0 80px rgba(0, 255, 73, 0.4), 0 0 120px rgba(0, 247, 255, 0.2), inset 0 0 30px rgba(0, 247, 255, 0.2)';
+                    e.currentTarget.style.boxShadow = '0 0 50px rgba(0, 247, 255, 0.8), 0 0 100px rgba(0, 255, 73, 0.5), 0 0 150px rgba(0, 247, 255, 0.3), inset 0 0 40px rgba(0, 247, 255, 0.3)';
                     e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.filter = 'drop-shadow(0 0 10px rgba(0, 247, 255, 0.6))';
                   }}
                 >
-                  <span className="ultra-spark"></span>
-                  <span className="ultra-spark"></span>
-                  <span className="ultra-spark"></span>
-                  <span className="ultra-spark"></span>
-                  <span className="ultra-spark"></span>
-                  <span className="ultra-spark"></span>
-                  <span className="ultra-spark"></span>
-                  <span className="ultra-spark"></span>
-                  <span className="radiant-ring"></span>
-                  <span className="radiant-ring"></span>
-                  <span className="radiant-ring"></span>
-                  <span className="navi-button-ultra-text">Join NAVI Society</span>
+                  <span className="apex-spark"></span>
+                  <span className="apex-spark"></span>
+                  <span className="apex-spark"></span>
+                  <span className="apex-spark"></span>
+                  <span className="apex-spark"></span>
+                  <span className="apex-spark"></span>
+                  <span className="apex-spark"></span>
+                  <span className="apex-spark"></span>
+                  <span className="apex-spark"></span>
+                  <span className="apex-spark"></span>
+                  <span className="apex-radiant-ring"></span>
+                  <span className="apex-radiant-ring"></span>
+                  <span className="apex-radiant-ring"></span>
+                  <span className="apex-radiant-ring"></span>
+                  <span className="cosmic-ray-element"></span>
+                  <span className="cosmic-ray-element"></span>
+                  <span className="cosmic-ray-element"></span>
+                  <span className="cosmic-ray-element"></span>
+                  <span className="navi-button-apex-text">Join NAVI Society</span>
                 </a>
               </div>
             </div>
