@@ -169,7 +169,7 @@ export default function Home() {
                   href="https://upgrade.chat/navisociety"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-16 py-8 rounded-lg font-bold text-3xl transition-all duration-300 transform hover:scale-110 navi-button-alt"
+                  className="px-16 py-8 rounded-lg font-bold text-3xl transition-all duration-300 navi-button-alt-enhanced"
                   style={{
                     background: 'linear-gradient(-45deg, #00FF49, #00DD3F, #00FF49, #00DD3F, #00FF49)',
                     backgroundSize: '500% 500%',
@@ -177,19 +177,28 @@ export default function Home() {
                     border: '4px solid #00FF49',
                     boxShadow: '0 0 40px rgba(0, 247, 255, 0.7), 0 0 80px rgba(0, 255, 73, 0.4), 0 0 120px rgba(0, 247, 255, 0.2)',
                     textDecoration: 'none',
-                    display: 'inline-block',
-                    letterSpacing: '0.08em',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    letterSpacing: '0.1em',
+                    position: 'relative',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 60px rgba(0, 247, 255, 1), 0 0 100px rgba(0, 255, 73, 0.8), 0 0 150px rgba(0, 247, 255, 0.5)';
-                    e.currentTarget.style.transform = 'scale(1.12)';
+                    e.currentTarget.style.boxShadow = '0 0 60px rgba(0, 247, 255, 1), 0 0 100px rgba(0, 255, 73, 0.8), 0 0 150px rgba(0, 247, 255, 0.5), 0 0 200px rgba(0, 255, 73, 0.3)';
+                    e.currentTarget.style.transform = 'scale(1.15)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.boxShadow = '0 0 40px rgba(0, 247, 255, 0.7), 0 0 80px rgba(0, 255, 73, 0.4), 0 0 120px rgba(0, 247, 255, 0.2)';
                     e.currentTarget.style.transform = 'scale(1)';
                   }}
                 >
-                  <span className="navi-button-alt-text">Join NAVI Society</span>
+                  <span className="spark"></span>
+                  <span className="spark"></span>
+                  <span className="spark"></span>
+                  <span className="spark"></span>
+                  <span className="spark"></span>
+                  <span className="spark"></span>
+                  <span className="navi-button-alt-text-enhanced">Join NAVI Society</span>
                 </a>
               </div>
             </div>

@@ -957,3 +957,128 @@ p {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+
+
+/* Celestial Orbit Animation */
+@keyframes celestial-orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Divine Spark Animation */
+@keyframes divine-spark {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Radiant Wave Animation */
+@keyframes radiant-wave {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Enhanced Button with Celestial Effects */
+.navi-button-alt-enhanced {
+  animation: prophetic-pulse-ring 2.5s ease-in-out infinite,
+             prophetic-glow-shift 4s ease infinite,
+             divine-glow 2.5s ease-in-out infinite;
+  position: relative;
+  overflow: visible;
+  background: linear-gradient(-45deg, #00FF49, #00DD3F, #00FF49, #00DD3F, #00FF49);
+  background-size: 500% 500%;
+  will-change: box-shadow, filter, background-position, transform;
+  box-shadow: 0 0 0 0 rgba(0, 247, 255, 0.8),
+              0 0 0 0 rgba(0, 255, 73, 0.4),
+              inset 0 0 30px rgba(0, 247, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Celestial Ring Effect */
+.navi-button-alt-enhanced::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  background: conic-gradient(from 0deg, #00F7FF, #00FF49, #00F7FF);
+  border-radius: 50%;
+  opacity: 0;
+  animation: celestial-orbit 4s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Divine Aura */
+.navi-button-alt-enhanced::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: radial-gradient(circle, rgba(0, 247, 255, 0.4) 0%, rgba(0, 255, 73, 0.2) 50%, transparent 100%);
+  border-radius: 50%;
+  animation: aura-glow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Prophetic Text Enhancement */
+.navi-button-alt-text-enhanced {
+  position: relative;
+  z-index: 2;
+  color: #00F7FF;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.5),
+               0 0 20px rgba(0, 255, 73, 0.3),
+               0 0 30px rgba(0, 247, 255, 0.2),
+               0 0 50px rgba(0, 247, 255, 0.1);
+  animation: divine-glow 2.5s ease-in-out infinite;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+/* Spark Elements */
+.spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00F7FF;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 247, 255, 0.8);
+  animation: divine-spark 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.spark:nth-child(1) { top: -10px; left: 20%; animation-delay: 0s; }
+.spark:nth-child(2) { top: -8px; right: 20%; animation-delay: 0.3s; }
+.spark:nth-child(3) { bottom: -10px; left: 15%; animation-delay: 0.6s; }
+.spark:nth-child(4) { bottom: -8px; right: 15%; animation-delay: 0.9s; }
+.spark:nth-child(5) { top: 50%; left: -8px; animation-delay: 0.15s; }
+.spark:nth-child(6) { top: 50%; right: -8px; animation-delay: 0.45s; }
+
+/* Hover Enhancement */
+.navi-button-alt-enhanced:hover {
+  transform: scale(1.15) !important;
+  box-shadow: 0 0 60px rgba(0, 247, 255, 1),
+              0 0 100px rgba(0, 255, 73, 0.8),
+              0 0 150px rgba(0, 247, 255, 0.5),
+              0 0 200px rgba(0, 255, 73, 0.3),
+              inset 0 0 40px rgba(0, 247, 255, 0.3) !important;
+}
+
+.navi-button-alt-enhanced:hover::before {
+  opacity: 1;
+}
