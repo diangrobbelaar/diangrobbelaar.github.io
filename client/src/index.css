@@ -1415,11 +1415,7 @@ p {
 
 /* Apex NAVI Button - Maximum Enhancement */
 .navi-button-apex {
-  animation: prophetic-pulse-ring 4s cubic-bezier(0.4, 0.0, 0.2, 1) infinite,
-             holographic-shimmer 8s cubic-bezier(0.4, 0.0, 0.2, 1) infinite,
-             quantum-pulse 4.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite,
-             chromatic-aberration 3.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite,
-             fractal-dimension 6s cubic-bezier(0.4, 0.0, 0.2, 1) infinite,
+  animation: quantum-pulse 4.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite,
              luminous-pulse 3.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
   position: relative;
   overflow: visible;
@@ -1456,7 +1452,7 @@ p {
   inset: -8px;
   background: radial-gradient(circle, rgba(0, 247, 255, 0.8) 0%, rgba(0, 255, 73, 0.4) 40%, transparent 70%);
   border-radius: 50%;
-  animation: mystical-aura 4s cubic-bezier(0.4, 0.0, 0.2, 1) infinite, dimensional-portal 8s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  animation: mystical-aura 4s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
   pointer-events: none;
 }
 
@@ -1470,7 +1466,7 @@ p {
   border-radius: 6px;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.3),
                0 2px 4px rgba(0, 0, 0, 0.2);
-  animation: chromatic-aberration 3.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite, luminous-pulse 3.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  animation: luminous-pulse 3.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
   font-weight: 900;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1492,7 +1488,7 @@ p {
   box-shadow: 0 0 15px rgba(0, 247, 255, 1),
               0 0 30px rgba(0, 255, 73, 0.8),
               0 0 50px rgba(0, 247, 255, 0.4);
-  animation: divine-spark 2.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite, cosmic-ray 3s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  animation: divine-spark 2.5s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
   pointer-events: none;
 }
 
@@ -1586,7 +1582,7 @@ p {
 }
 
 .navi-button-apex:hover::after {
-  animation: mystical-aura 3s cubic-bezier(0.4, 0.0, 0.2, 1) infinite, dimensional-portal 6s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  animation: mystical-aura 3s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
 }
 
 .navi-button-apex:hover .apex-spark {
@@ -1597,5 +1593,5 @@ p {
 
 .navi-button-apex:hover .apex-radiant-ring {
   border-color: rgba(0, 247, 255, 1);
-  animation: radiant-pulse-wave 2s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  animation: none;
 }
