@@ -142,9 +142,6 @@ export default function Home() {
                 <Zap className="w-8 h-8 text-cyan-400" />
               </div>
               <h3 className="text-2xl font-bold mb-4 neon-glow-cyan">Prophet</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Anointed with divine revelation and spiritual insight. Delivering God's message with clarity, power, and unwavering faith to guide believers toward their destiny.
-              </p>
             </div>
 
             {/* Musician Card */}
@@ -153,9 +150,6 @@ export default function Home() {
                 <Music className="w-8 h-8 text-magenta-400" />
               </div>
               <h3 className="text-2xl font-bold mb-4 neon-glow-magenta">Musician</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Expressing spiritual truth through music. Creating melodies that inspire, uplift, and connect listeners to the divine presence through artistic excellence.
-              </p>
             </div>
 
             {/* MMA Artist Card */}
@@ -164,9 +158,6 @@ export default function Home() {
                 <Heart className="w-8 h-8 text-lime-400" />
               </div>
               <h3 className="text-2xl font-bold mb-4 neon-glow-lime">MMA Artist</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Channeling spiritual discipline and strength through combat sports. Demonstrating the power of faith, determination, and excellence in the arena.
-              </p>
             </div>
           </div>
         </div>

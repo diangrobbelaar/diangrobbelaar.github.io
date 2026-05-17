@@ -512,7 +512,7 @@ p {
   letter-spacing: 0.01em;
 }
 
-/* Floating Particles Animation */
+/* Floating Particles Animation - OPTIMIZED FOR PERFORMANCE */
 @keyframes float-particle {
   0% {
     transform: translateY(0px) translateX(0px);
@@ -566,6 +566,7 @@ p {
 
 .floating-particles {
   position: relative;
+  will-change: transform;
 }
 
 .floating-particles::before,
@@ -576,6 +577,7 @@ p {
   height: 6px;
   border-radius: 50%;
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-particles::before {
@@ -594,7 +596,7 @@ p {
   animation: float-particle-golden 3s ease-in infinite 0.3s;
 }
 
-/* Additional cyan particles */
+/* Additional white particles */
 .floating-particles .particle-cyan-1 {
   position: absolute;
   width: 5px;
@@ -606,6 +608,7 @@ p {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   animation: float-particle-white 2.8s ease-in infinite 0.4s;
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-particles .particle-cyan-2 {
@@ -619,6 +622,7 @@ p {
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
   animation: float-particle-white 3.2s ease-in infinite 0.6s;
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-particles .particle-cyan-3 {
@@ -632,6 +636,7 @@ p {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   animation: float-particle-white 3.5s ease-in infinite 0.2s;
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-particles .particle-white-1 {
@@ -645,6 +650,7 @@ p {
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
   animation: float-particle-white 2.9s ease-in infinite 0.3s;
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-particles .particle-white-2 {
@@ -658,6 +664,7 @@ p {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   animation: float-particle-white 3.3s ease-in infinite 0.7s;
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-particles .particle-white-3 {
@@ -671,6 +678,7 @@ p {
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
   animation: float-particle-white 3.1s ease-in infinite 0.5s;
   pointer-events: none;
+  will-change: transform;
 }
 
 /* Additional golden particles */
@@ -685,6 +693,7 @@ p {
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
   animation: float-particle-golden 2.9s ease-in infinite 0.5s;
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-particles .particle-gold-2 {
@@ -698,6 +707,7 @@ p {
   box-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
   animation: float-particle-golden 3.3s ease-in infinite 0.7s;
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-particles .particle-gold-3 {
@@ -711,6 +721,7 @@ p {
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
   animation: float-particle-golden 3.1s ease-in infinite 0.1s;
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-particles .particle-gold-4 {
@@ -724,6 +735,7 @@ p {
   box-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
   animation: float-particle-golden 2.8s ease-in infinite 0.2s;
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-particles .particle-gold-5 {
@@ -737,6 +749,7 @@ p {
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
   animation: float-particle-golden 3.4s ease-in infinite 0.6s;
   pointer-events: none;
+  will-change: transform;
 }
 
 .floating-particles .particle-gold-6 {
@@ -750,9 +763,10 @@ p {
   box-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
   animation: float-particle-golden 3.2s ease-in infinite 0.4s;
   pointer-events: none;
+  will-change: transform;
 }
 
-/* Neon Flicker Animation */
+/* Neon Flicker Animation - OPTIMIZED */
 @keyframes neon-flicker {
   0%, 100% {
     text-shadow: 0 0 20px rgba(0, 247, 255, 0.4),
@@ -780,9 +794,10 @@ p {
 
 .neon-flicker {
   animation: neon-flicker 4s ease-in-out infinite;
+  will-change: text-shadow;
 }
 
-/* Enhanced Button Glow Ring Animation */
+/* Enhanced Button Glow Ring Animation - OPTIMIZED */
 @keyframes button-glow-ring {
   0% {
     box-shadow: 0 0 20px rgba(0, 247, 255, 0.4),
@@ -802,7 +817,7 @@ p {
   }
 }
 
-/* Shimmer Wave Animation */
+/* Shimmer Wave Animation - OPTIMIZED */
 @keyframes shimmer-wave {
   0% {
     background-position: -1000px 0;
@@ -812,7 +827,7 @@ p {
   }
 }
 
-/* Rotating Border Animation */
+/* Rotating Border Animation - OPTIMIZED */
 @keyframes rotate-border {
   0% {
     border-color: #00F7FF;
@@ -836,6 +851,9 @@ p {
              rotate-border 4s ease-in-out infinite;
   position: relative;
   overflow: hidden;
+  will-change: box-shadow, border-color;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .navi-button-enhanced::before {
@@ -848,4 +866,5 @@ p {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   animation: shimmer-wave 2s infinite;
   pointer-events: none;
+  will-change: transform;
 }
