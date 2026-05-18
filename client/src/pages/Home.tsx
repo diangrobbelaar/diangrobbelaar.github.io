@@ -377,30 +377,7 @@ export default function Home() {
               </div>
             </a>
             
-            <a
-              href="https://x.com/Prophet_Dian"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative"
-              aria-label="X"
-            >
-              <div className="p-4 rounded-full transition-all duration-300 transform hover:scale-110" style={{
-                background: 'rgba(0, 255, 73, 0.1)',
-                border: '2px solid #00FF49',
-                boxShadow: '0 0 15px rgba(0, 255, 73, 0.3)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 255, 73, 0.6), 0 0 50px rgba(0, 255, 73, 0.3)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 255, 73, 0.3)';
-              }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00FF49" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 4l16 16M20 4l-16 16" />
-                </svg>
-              </div>
-            </a>
-            
+
             <a
               href="https://www.youtube.com/@prophetdian"
               target="_blank"
