@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Mail, Instagram, Facebook, Music, Zap, Heart, Users, MessageCircle, Youtube } from 'lucide-react';
+import { useCallback, useMemo } from 'react';
 
 /**
  * Design System: Neon Spirituality
@@ -14,21 +15,23 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 50);
+  }, []);
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
+  useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [handleMouseMove]);
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
@@ -92,10 +95,14 @@ export default function Home() {
                     boxShadow: '0 0 25px rgba(0, 247, 255, 0.4), 0 0 40px rgba(0, 247, 255, 0.2)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 35px rgba(0, 247, 255, 0.6), 0 0 60px rgba(0, 247, 255, 0.3)';
+                    requestAnimationFrame(() => {
+                      e.currentTarget.style.boxShadow = '0 0 35px rgba(0, 247, 255, 0.6), 0 0 60px rgba(0, 247, 255, 0.3)';
+                    });
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 25px rgba(0, 247, 255, 0.4), 0 0 40px rgba(0, 247, 255, 0.2)';
+                    requestAnimationFrame(() => {
+                      e.currentTarget.style.boxShadow = '0 0 25px rgba(0, 247, 255, 0.4), 0 0 40px rgba(0, 247, 255, 0.2)';
+                    });
                   }}
                 >
                   Give to the Church
