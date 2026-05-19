@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Mail, Instagram, Facebook, Music, Zap, Heart, Users, MessageCircle, Youtube } from 'lucide-react';
-import { useCallback, useMemo } from 'react';
 
 /**
  * Design System: Neon Spirituality
@@ -24,8 +23,21 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    let scrollTimeout: NodeJS.Timeout;
+    const handleScrollWithPause = () => {
+      document.documentElement.classList.add('scrolling');
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        document.documentElement.classList.remove('scrolling');
+      }, 150);
+      handleScroll();
+    };
+    
+    window.addEventListener('scroll', handleScrollWithPause, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScrollWithPause);
+      clearTimeout(scrollTimeout);
+    };
   }, [handleScroll]);
 
   useEffect(() => {

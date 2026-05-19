@@ -123,10 +123,18 @@
     color: #FFFFFF;
   }
   
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 0;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+html.scrolling * {
+  animation-play-state: paused !important;
+}
+
+html.scrolling .navi-button-enhanced::before {
+  animation-play-state: paused !important;
+}
   
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -862,6 +870,7 @@ p {
   -webkit-backface-visibility: hidden;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
+  contain: layout style paint;
 }
 
 .navi-button-enhanced::before {
