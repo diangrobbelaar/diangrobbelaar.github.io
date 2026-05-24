@@ -302,7 +302,7 @@ export default function Home() {
       <section className="py-20 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <img
-            src="/manus-storage/rekkies-header_14f76c6c.jpg"
+            src="/rekkies-header.jpg"
             alt="REKKIES"
             className="w-full max-w-2xl h-auto mx-auto mb-12 object-contain drop-shadow-2xl"
             style={{
