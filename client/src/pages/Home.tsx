@@ -301,7 +301,14 @@ export default function Home() {
       {/* Rekkies Section */}
       <section className="py-20 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <h2 className="text-6xl md:text-7xl font-bold mb-12 neon-glow-lime">REKKIES</h2>
+          <img
+            src="/manus-storage/rekkies-header_14f76c6c.jpg"
+            alt="REKKIES"
+            className="w-full max-w-2xl h-auto mx-auto mb-12 object-contain drop-shadow-2xl"
+            style={{
+              filter: 'drop-shadow(0 0 30px rgba(0, 255, 73, 0.4))',
+            }}
+          />
           <a
             href="https://upgrade.chat/rekkies"
             target="_blank"
