@@ -348,7 +348,7 @@ export default function Home() {
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/prophet_dian_logo_original_4k_92f28861.png"
               alt="Prophet Dian Logo 4K"
-              className="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl transition-transform hover:scale-110"
+              className="w-16 h-auto md:w-20 object-contain drop-shadow-2xl transition-transform hover:scale-110"
               style={{
                 filter: 'drop-shadow(0 0 20px rgba(0, 247, 255, 0.4))',
               }}
