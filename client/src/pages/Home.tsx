@@ -262,7 +262,7 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-lime-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* WhatsApp Section */}
-      <section className="py-20 px-4 md:px-8 relative">
+      <section className="py-14 px-4 md:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
           <div className="float-animation mb-6">
             <MessageCircle className="w-16 h-16 mx-auto text-cyan-400" />
@@ -299,12 +299,12 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Rekkies Section */}
-      <section className="py-20 px-4 md:px-8 relative overflow-hidden">
+      <section className="py-14 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <img
             src="/rekkies-header.jpg"
             alt="REKKIES"
-            className="w-full max-w-2xl h-auto mx-auto mb-12 object-contain drop-shadow-2xl"
+            className="w-80 h-auto mx-auto mb-12 object-contain drop-shadow-2xl"
             style={{
               filter: 'drop-shadow(0 0 30px rgba(0, 255, 73, 0.4))',
             }}
@@ -342,13 +342,14 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-lime-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Prophet Dian Logo Section */}
-      <section className="py-20 px-4 md:px-8 relative overflow-hidden">
+      <section className="py-12 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <div className="mb-8 flex justify-center float-animation">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/prophet_dian_logo_original_4k_92f28861.png"
               alt="Prophet Dian Logo 4K"
-              className="w-16 h-auto md:w-20 object-contain drop-shadow-2xl transition-transform hover:scale-110"
+              loading="eager"
+              className="w-12 h-auto md:w-14 object-contain drop-shadow-2xl transition-transform hover:scale-110"
               style={{
                 filter: 'drop-shadow(0 0 20px rgba(0, 247, 255, 0.4))',
               }}
