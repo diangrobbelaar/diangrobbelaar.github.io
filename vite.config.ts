@@ -199,16 +199,10 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-// Manus dev-tooling plugins (runtime overlay, jsx-loc, debug collector) are dev-only:
-// in production they inject ~350KB of inline JS into index.html and data-loc attributes
-// into the bundle, slowing every page load with zero user-facing benefit.
-const makePlugins = (command: "build" | "serve") =>
-  command === "serve"
-    ? [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginStorageProxy(), vitePluginManusDebugCollector()]
-    : [react(), tailwindcss()];
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginStorageProxy(), vitePluginManusDebugCollector()];
 
-export default defineConfig(({ command }) => ({
-  plugins: makePlugins(command),
+export default defineConfig({
+  plugins,
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -249,4 +243,4 @@ export default defineConfig(({ command }) => ({
       deny: ["**/.*"],
     },
   },
-}));
+});

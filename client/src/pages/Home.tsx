@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Mail, Instagram, Facebook, Music, Zap, Heart, Users, MessageCircle, Youtube } from 'lucide-react';
 
 /**
@@ -11,219 +11,48 @@ import { Mail, Instagram, Facebook, Music, Zap, Heart, Users, MessageCircle, You
  */
 
 export default function Home() {
-  const starCanvasRef = useRef<HTMLCanvasElement>(null);
-  const spotlightRef = useRef<HTMLDivElement>(null);
-  const progressRef = useRef<HTMLDivElement>(null);
-  const tiltRef = useRef<HTMLDivElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  // Neon starfield — twinkling drifting particles with mouse parallax
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 50);
+  }, []);
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  }, []);
+
   useEffect(() => {
-    const canvas = starCanvasRef.current;
-    if (!canvas) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const COLORS = ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#00F7FF', '#00F7FF', '#FA00FF', '#00FF49'];
-    type Star = {
-      x: number; y: number; r: number; color: string;
-      vx: number; vy: number; phase: number; speed: number;
-      alpha: number; depth: number;
+    let scrollTimeout: NodeJS.Timeout;
+    const handleScrollWithPause = () => {
+      document.documentElement.classList.add('scrolling');
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        document.documentElement.classList.remove('scrolling');
+      }, 150);
+      handleScroll();
     };
-    let width = 0;
-    let height = 0;
-    let raf = 0;
-    let stars: Star[] = [];
-    const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
-
-    const build = () => {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.min(150, Math.floor((width * height) / 11000));
-      stars = Array.from({ length: count }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: 0.5 + Math.random() * 1.4,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
-        vx: (Math.random() - 0.5) * 0.08,
-        vy: (Math.random() - 0.5) * 0.06,
-        phase: Math.random() * Math.PI * 2,
-        speed: 0.06 + Math.random() * 0.2,
-        alpha: 0.2 + Math.random() * 0.6,
-        depth: 0.3 + Math.random() * 0.7,
-      }));
-    };
-
-    const onMove = (e: MouseEvent) => {
-      mouse.tx = (e.clientX / width - 0.5) * 2;
-      mouse.ty = (e.clientY / height - 0.5) * 2;
-    };
-
-    const draw = () => {
-      ctx.clearRect(0, 0, width, height);
-      mouse.x += (mouse.tx - mouse.x) * 0.05;
-      mouse.y += (mouse.ty - mouse.y) * 0.05;
-      for (const s of stars) {
-        s.x += s.vx;
-        s.y += s.vy;
-        s.phase += s.speed;
-        if (s.x < -5) s.x = width + 5;
-        else if (s.x > width + 5) s.x = -5;
-        if (s.y < -5) s.y = height + 5;
-        else if (s.y > height + 5) s.y = -5;
-        const twinkle = 0.55 + 0.45 * Math.sin(s.phase);
-        const px = s.x + mouse.x * 18 * s.depth;
-        const py = s.y + mouse.y * 12 * s.depth;
-        ctx.globalAlpha = s.alpha * twinkle;
-        ctx.fillStyle = s.color;
-        ctx.beginPath();
-        ctx.arc(px, py, s.r, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.globalAlpha = s.alpha * twinkle * 0.25;
-        ctx.beginPath();
-        ctx.arc(px, py, s.r * 2.6, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      ctx.globalAlpha = 1;
-      raf = requestAnimationFrame(draw);
-    };
-
-    build();
-    draw();
-    window.addEventListener('resize', build);
-    window.addEventListener('mousemove', onMove, { passive: true });
+    
+    window.addEventListener('scroll', handleScrollWithPause, { passive: true });
     return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener('resize', build);
-      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('scroll', handleScrollWithPause);
+      clearTimeout(scrollTimeout);
     };
-  }, []);
+  }, [handleScroll]);
 
-  // Cursor glow spotlight — follows the mouse with a smooth trail
   useEffect(() => {
-    const spotlight = spotlightRef.current;
-    if (!spotlight) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (window.matchMedia('(hover: none)').matches) return;
-    let raf = 0;
-    let x = window.innerWidth / 2;
-    let y = window.innerHeight / 3;
-    let tx = x;
-    let ty = y;
-    const onMove = (e: MouseEvent) => {
-      tx = e.clientX;
-      ty = e.clientY;
-      spotlight.style.opacity = '1';
-    };
-    const loop = () => {
-      x += (tx - x) * 0.12;
-      y += (ty - y) * 0.12;
-      spotlight.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
-      raf = requestAnimationFrame(loop);
-    };
-    loop();
-    window.addEventListener('mousemove', onMove, { passive: true });
-    return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener('mousemove', onMove);
-    };
-  }, []);
-
-  // Scroll progress bar — rAF-throttled, no React re-renders
-  useEffect(() => {
-    const bar = progressRef.current;
-    if (!bar) return;
-    let raf = 0;
-    const update = () => {
-      raf = 0;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const p = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
-      bar.style.transform = `scaleX(${p})`;
-    };
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-    update();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
-      if (raf) cancelAnimationFrame(raf);
-    };
-  }, []);
-
-  // Reveal sections as they scroll into view
-  useEffect(() => {
-    document.documentElement.classList.add('js-reveal');
-    const els = Array.from(document.querySelectorAll('.reveal'));
-    if (!('IntersectionObserver' in window)) {
-      els.forEach((el) => el.classList.add('in-view'));
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            io.unobserve(entry.target);
-          }
-        }
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-
-  // 3D tilt on the hero portrait
-  useEffect(() => {
-    const el = tiltRef.current;
-    if (!el) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (window.matchMedia('(hover: none)').matches) return;
-    const onMove = (e: MouseEvent) => {
-      const rect = el.getBoundingClientRect();
-      const rx = ((e.clientY - rect.top) / rect.height - 0.5) * -10;
-      const ry = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
-      el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.03, 1.03, 1.03)`;
-    };
-    const onLeave = () => {
-      el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
-    };
-    el.addEventListener('mousemove', onMove);
-    el.addEventListener('mouseleave', onLeave);
-    return () => {
-      el.removeEventListener('mousemove', onMove);
-      el.removeEventListener('mouseleave', onLeave);
-    };
-  }, []);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [handleMouseMove]);
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      {/* Neon Starfield */}
-      <canvas ref={starCanvasRef} className="fixed inset-0 pointer-events-none" aria-hidden="true" />
-
       {/* Animated Background Orbs */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <div className="aurora-layer"></div>
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-screen filter blur-3xl opacity-5 float-animation"></div>
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-magenta-500 rounded-full mix-blend-screen filter blur-3xl opacity-5 float-animation" style={{ animationDelay: '1s' }}></div>
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-lime-500 rounded-full mix-blend-screen filter blur-3xl opacity-3 float-animation" style={{ animationDelay: '2s' }}></div>
-        <span className="shooting-star shooting-star-1"></span>
-        <span className="shooting-star shooting-star-2"></span>
-        <span className="shooting-star shooting-star-3"></span>
       </div>
-
-      {/* Cursor Glow Spotlight */}
-      <div ref={spotlightRef} className="cursor-spotlight" aria-hidden="true"></div>
-
-      {/* Scroll Progress Bar */}
-      <div ref={progressRef} className="scroll-progress" aria-hidden="true"></div>
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-lg">
@@ -238,16 +67,12 @@ export default function Home() {
           <div className="flex flex-col items-center text-center space-y-8 max-w-3xl">
             {/* Center: Image with Premium Effects */}
             <div className="fade-in-up">
-              <div ref={tiltRef} className="relative group tilt-card">
+              <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-magenta-500 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-magenta-500 to-lime-500 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-xl"></div>
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_formal_a961f443.jpg"
                   alt="Dian Grobbelaar"
-                  width={720}
-                  height={684}
-                  fetchPriority="high"
-                  decoding="async"
                   className="relative w-80 h-auto rounded-2xl border-2 border-cyan-500/50 shadow-2xl object-cover image-premium-quality"
                 />
               </div>
@@ -323,7 +148,7 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Three Roles Section */}
-      <section id="roles" className="py-20 px-4 md:px-8 relative reveal">
+      <section id="roles" className="py-20 px-4 md:px-8 relative">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             <span className="gradient-text-cyan-magenta">Divine Purpose</span>
@@ -361,7 +186,7 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-magenta-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Glory and Grace Church Section */}
-      <section id="church" className="py-20 px-4 md:px-8 relative overflow-hidden reveal">
+      <section id="church" className="py-20 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex justify-center">
             {/* Church Info - Centered */}
@@ -379,21 +204,21 @@ export default function Home() {
               </p>
 
               <div className="space-y-4">
-                <div className="flex items-start gap-4 group cursor-pointer reveal-item">
+                <div className="flex items-start gap-4 group cursor-pointer">
                   <Users className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" />
                   <div>
                     <h4 className="font-bold text-white mb-1">Community-Driven</h4>
                     <p className="text-gray-300">Building a strong family of believers united in faith and purpose</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 group cursor-pointer reveal-item">
+                <div className="flex items-start gap-4 group cursor-pointer">
                   <Heart className="w-6 h-6 text-magenta-400 flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" />
                   <div>
                     <h4 className="font-bold text-white mb-1">Spirit-Led</h4>
                     <p className="text-gray-300">Guided by the Holy Spirit in all our teachings and actions</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 group cursor-pointer reveal-item">
+                <div className="flex items-start gap-4 group cursor-pointer">
                   <Zap className="w-6 h-6 text-lime-400 flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" />
                   <div>
                     <h4 className="font-bold text-white mb-1">Transformative</h4>
@@ -437,7 +262,7 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-lime-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* WhatsApp Section */}
-      <section className="py-14 px-4 md:px-8 relative reveal">
+      <section className="py-14 px-4 md:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
           <div className="float-animation mb-6">
             <MessageCircle className="w-16 h-16 mx-auto text-cyan-400" />
@@ -474,14 +299,12 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Rekkies Section */}
-      <section className="py-14 px-4 md:px-8 relative overflow-hidden reveal">
+      <section className="py-14 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <img
             src="/rekkies-header.jpg"
             alt="REKKIES"
-            loading="lazy"
-            decoding="async"
-            className="w-80 aspect-[720/684] mx-auto mb-12 object-cover drop-shadow-2xl"
+            className="w-80 h-auto mx-auto mb-12 object-contain drop-shadow-2xl"
             style={{
               filter: 'drop-shadow(0 0 30px rgba(0, 255, 73, 0.4))',
             }}
@@ -519,14 +342,13 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-lime-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Prophet Dian Logo Section */}
-      <section className="py-12 px-4 md:px-8 relative overflow-hidden reveal">
+      <section className="py-12 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <div className="mb-8 flex justify-center float-animation">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/prophet_dian_logo_original_4k_92f28861.png"
               alt="Prophet Dian Logo 4K"
-              loading="lazy"
-              decoding="async"
+              loading="eager"
               className="w-12 h-auto md:w-14 object-contain drop-shadow-2xl transition-transform hover:scale-110"
               style={{
                 filter: 'drop-shadow(0 0 20px rgba(0, 247, 255, 0.4))',
@@ -645,21 +467,10 @@ export default function Home() {
             Join NAVI Society
           </a>
         </div>
-
-        {/* NAVI */}
-        <div className="mt-12 flex justify-center">
-          <img
-            src="/navi.png"
-            alt="NAVI"
-            loading="lazy"
-            decoding="async"
-            className="w-64 md:w-72 h-auto object-contain float-animation"
-          />
-        </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-8 px-4 md:px-8 relative overflow-hidden reveal">
+      <section id="contact" className="py-8 px-4 md:px-8 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="gradient-text-magenta-lime">Contact the Team</span>
@@ -693,7 +504,7 @@ export default function Home() {
       <div className="h-px bg-gradient-to-r from-transparent via-magenta-500 to-transparent opacity-50 shimmer-effect"></div>
 
       {/* Social Links Footer */}
-      <footer className="py-20 px-4 md:px-8 relative reveal">
+      <footer className="py-20 px-4 md:px-8 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold mb-8 neon-glow-cyan">Follow Dian</h3>

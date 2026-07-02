@@ -128,6 +128,14 @@ html {
   scroll-padding-top: 0;
 }
 
+html.scrolling * {
+  animation-play-state: paused !important;
+}
+
+html.scrolling .navi-button-enhanced::before {
+  animation-play-state: paused !important;
+}
+  
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -454,218 +462,25 @@ html {
     transform: scale(1.3) translateY(-6px) rotate(5deg);
   }
   
-  /* Gradient Text - OPTIMIZED + Living Gradient Pan */
+  /* Gradient Text - OPTIMIZED */
   .gradient-text-cyan-magenta {
-    background: linear-gradient(135deg, #00F7FF 0%, #FA00FF 50%, #00F7FF 100%);
-    background-size: 200% auto;
+    background: linear-gradient(135deg, #00F7FF 0%, #FA00FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 900;
     letter-spacing: 0.08em;
-    animation: gradient-pan 6s ease-in-out infinite alternate;
-    will-change: background-position;
+    will-change: background;
   }
-
+  
   .gradient-text-magenta-lime {
-    background: linear-gradient(135deg, #FA00FF 0%, #00FF49 50%, #FA00FF 100%);
-    background-size: 200% auto;
+    background: linear-gradient(135deg, #FA00FF 0%, #00FF49 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 900;
     letter-spacing: 0.08em;
-    animation: gradient-pan 6s ease-in-out infinite alternate;
-    will-change: background-position;
-  }
-
-  @keyframes gradient-pan {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
-  }
-
-  /* Scroll Reveal — sections rise into view (only when JS is active) */
-  .reveal {
-    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  html.js-reveal .reveal:not(.in-view) {
-    opacity: 0;
-    transform: translateY(48px) scale(0.985);
-  }
-
-  .reveal.in-view {
-    opacity: 1;
-    transform: none;
-  }
-
-  /* Staggered child reveal inside a revealed section */
-  .reveal .reveal-item {
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  html.js-reveal .reveal:not(.in-view) .reveal-item {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-
-  .reveal.in-view .reveal-item {
-    opacity: 1;
-    transform: none;
-  }
-
-  .reveal.in-view .reveal-item:nth-of-type(1) { transition-delay: 0.15s; }
-  .reveal.in-view .reveal-item:nth-of-type(2) { transition-delay: 0.3s; }
-  .reveal.in-view .reveal-item:nth-of-type(3) { transition-delay: 0.45s; }
-
-  /* 3D Tilt Card (hero portrait) */
-  .tilt-card {
-    transition: transform 0.25s ease-out;
-    transform-style: preserve-3d;
-    will-change: transform;
-  }
-
-  /* Cursor Glow Spotlight */
-  .cursor-spotlight {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 550px;
-    height: 550px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 30;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    mix-blend-mode: screen;
-    background: radial-gradient(circle,
-                rgba(0, 247, 255, 0.09) 0%,
-                rgba(250, 0, 255, 0.05) 35%,
-                transparent 70%);
-    will-change: transform;
-  }
-
-  /* Scroll Progress Bar */
-  .scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    z-index: 60;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    background: linear-gradient(90deg, #00F7FF 0%, #FA00FF 50%, #00FF49 100%);
-    box-shadow: 0 0 12px rgba(0, 247, 255, 0.55), 0 0 24px rgba(250, 0, 255, 0.3);
-    pointer-events: none;
-    will-change: transform;
-  }
-
-  /* Aurora Layer — slow rotating nebula wash */
-  .aurora-layer {
-    position: absolute;
-    inset: -35%;
-    background: conic-gradient(from 0deg at 50% 50%,
-                rgba(0, 247, 255, 0.05),
-                rgba(250, 0, 255, 0.04),
-                rgba(0, 255, 73, 0.035),
-                rgba(0, 247, 255, 0.05));
-    filter: blur(90px);
-    animation: aurora-spin 45s linear infinite;
-    will-change: transform;
-  }
-
-  @keyframes aurora-spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  /* Shooting Stars */
-  .shooting-star {
-    position: absolute;
-    width: 150px;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(0, 247, 255, 0.5), transparent);
-    filter: drop-shadow(0 0 6px rgba(0, 247, 255, 0.8));
-    opacity: 0;
-    animation: shooting 9s linear infinite;
-  }
-
-  .shooting-star-1 {
-    top: 12%;
-    left: -10%;
-    animation-delay: 2s;
-  }
-
-  .shooting-star-2 {
-    top: 38%;
-    left: 15%;
-    animation-delay: 6.5s;
-    animation-duration: 11s;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(250, 0, 255, 0.5), transparent);
-    filter: drop-shadow(0 0 6px rgba(250, 0, 255, 0.8));
-  }
-
-  .shooting-star-3 {
-    top: 65%;
-    left: 40%;
-    animation-delay: 11s;
-    animation-duration: 13s;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(0, 255, 73, 0.5), transparent);
-    filter: drop-shadow(0 0 6px rgba(0, 255, 73, 0.8));
-  }
-
-  @keyframes shooting {
-    0% {
-      opacity: 0;
-      transform: rotate(-25deg) translateX(0);
-    }
-    3% {
-      opacity: 1;
-    }
-    11% {
-      opacity: 0;
-      transform: rotate(-25deg) translateX(62vw);
-    }
-    100% {
-      opacity: 0;
-      transform: rotate(-25deg) translateX(62vw);
-    }
-  }
-}
-
-/* Respect users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  html.js-reveal .reveal:not(.in-view),
-  html.js-reveal .reveal:not(.in-view) .reveal-item {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .cursor-spotlight,
-  .shooting-star,
-  .aurora-layer {
-    display: none !important;
+    will-change: background;
   }
 }
 
