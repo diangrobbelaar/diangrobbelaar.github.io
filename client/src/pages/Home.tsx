@@ -244,6 +244,10 @@ export default function Home() {
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_formal_a961f443.jpg"
                   alt="Dian Grobbelaar"
+                  width={720}
+                  height={684}
+                  fetchPriority="high"
+                  decoding="async"
                   className="relative w-80 h-auto rounded-2xl border-2 border-cyan-500/50 shadow-2xl object-cover image-premium-quality"
                 />
               </div>
@@ -475,6 +479,8 @@ export default function Home() {
           <img
             src="/rekkies-header.jpg"
             alt="REKKIES"
+            loading="lazy"
+            decoding="async"
             className="w-80 aspect-[720/684] mx-auto mb-12 object-cover drop-shadow-2xl"
             style={{
               filter: 'drop-shadow(0 0 30px rgba(0, 255, 73, 0.4))',
@@ -519,7 +525,8 @@ export default function Home() {
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/prophet_dian_logo_original_4k_92f28861.png"
               alt="Prophet Dian Logo 4K"
-              loading="eager"
+              loading="lazy"
+              decoding="async"
               className="w-12 h-auto md:w-14 object-contain drop-shadow-2xl transition-transform hover:scale-110"
               style={{
                 filter: 'drop-shadow(0 0 20px rgba(0, 247, 255, 0.4))',
