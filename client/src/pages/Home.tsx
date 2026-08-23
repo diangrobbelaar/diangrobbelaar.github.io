@@ -304,6 +304,7 @@ export default function Home() {
           <img
             src="/rekkies-header.jpg"
             alt="REKKIES"
+            loading="lazy"
             className="w-80 h-auto mx-auto mb-12 object-contain drop-shadow-2xl"
             style={{
               filter: 'drop-shadow(0 0 30px rgba(0, 255, 73, 0.4))',
@@ -348,7 +349,7 @@ export default function Home() {
             <img
               src="/prophet-dian-logo.png"
               alt="Prophet Dian Logo 4K"
-              loading="eager"
+              loading="lazy"
               className="w-12 h-auto md:w-14 object-contain drop-shadow-2xl transition-transform hover:scale-110"
               style={{
                 filter: 'drop-shadow(0 0 20px rgba(0, 247, 255, 0.4))',
@@ -473,6 +474,7 @@ export default function Home() {
             <img
               src="/navi-assistant.png"
               alt="NAVI - AI Assistant"
+              loading="lazy"
               className="w-80 h-auto rounded-2xl shadow-2xl object-cover image-premium-quality"
             />
           </div>
