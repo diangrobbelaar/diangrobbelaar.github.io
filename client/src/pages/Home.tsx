@@ -252,7 +252,7 @@ export default function Home() {
             <span className="neon-glow-cyan">Join the Church</span>
           </h2>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Stay connected with daily inspirations, prayer requests, and updates from Glory and Grace Church. Join our Discord channel for exclusive content and community engagement.
+            Stay connected with daily inspirations, prayer requests, and updates from Glory and Grace Church. Join our Discord Community for exclusive content and community engagement.
           </p>
           <a
             href="https://upgrade.chat/gandgpartners"
