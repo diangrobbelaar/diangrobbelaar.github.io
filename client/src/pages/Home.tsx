@@ -71,7 +71,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-magenta-500 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-magenta-500 to-lime-500 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-xl"></div>
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/dian_formal_a961f443.jpg"
+                  src="/dian-hero.jpg"
                   alt="Dian Grobbelaar"
                   className="relative w-80 h-auto rounded-2xl border-2 border-cyan-500/50 shadow-2xl object-cover image-premium-quality"
                 />
@@ -346,7 +346,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <div className="mb-8 flex justify-center float-animation">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663476928525/TKW77vZ77nHhfNkPta2jej/prophet_dian_logo_original_4k_92f28861.png"
+              src="/prophet-dian-logo.png"
               alt="Prophet Dian Logo 4K"
               loading="eager"
               className="w-12 h-auto md:w-14 object-contain drop-shadow-2xl transition-transform hover:scale-110"
@@ -466,6 +466,16 @@ export default function Home() {
             <span className="particle-gold-6"></span>
             Join NAVI Society
           </a>
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <div className="fade-in-up">
+            <img
+              src="/navi-assistant.png"
+              alt="NAVI - AI Assistant"
+              className="w-80 h-auto rounded-2xl shadow-2xl object-cover image-premium-quality"
+            />
+          </div>
         </div>
       </section>
 
