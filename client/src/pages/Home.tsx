@@ -242,7 +242,7 @@ export default function Home() {
       {/* Premium Divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-lime-500 to-transparent opacity-50 shimmer-effect"></div>
 
-      {/* WhatsApp Section */}
+      {/* Discord Section */}
       <section className="py-14 px-4 md:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
           <div className="float-animation mb-6">
@@ -252,10 +252,10 @@ export default function Home() {
             <span className="neon-glow-cyan">Join the Church</span>
           </h2>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Stay connected with daily inspirations, prayer requests, and updates from Glory and Grace Church. Join our WhatsApp channel for exclusive content and community engagement.
+            Stay connected with daily inspirations, prayer requests, and updates from Glory and Grace Church. Join our Discord channel for exclusive content and community engagement.
           </p>
           <a
-            href="https://whatsapp.com/channel/0029VbBpoyx05MUhjSNxvS17"
+            href="https://upgrade.chat/gandgpartners"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 pulse-glow transform hover:scale-105"
@@ -271,7 +271,7 @@ export default function Home() {
               e.currentTarget.style.boxShadow = '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)';
             }}
           >
-            Join Now on WhatsApp
+            Join G&G Partners
           </a>
         </div>
       </section>
