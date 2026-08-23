@@ -119,25 +119,6 @@ export default function Home() {
                 >
                   Give to the Church
                 </a>
-                <a
-                  href="https://whatsapp.com/channel/0029VbBpoyx05MUhjSNxvS17"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 font-bold text-lg rounded-lg transition-all duration-300 text-center transform hover:scale-105"
-                  style={{
-                    background: '#FA00FF',
-                    color: '#000000',
-                    boxShadow: '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 35px rgba(250, 0, 255, 0.6), 0 0 60px rgba(250, 0, 255, 0.2)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 25px rgba(250, 0, 255, 0.4), 0 0 40px rgba(250, 0, 255, 0.2)';
-                  }}
-                >
-                  Join the Church WhatsApp Channel
-                </a>
               </div>
             </div>
           </div>
